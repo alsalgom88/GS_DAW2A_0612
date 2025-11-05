@@ -1,66 +1,130 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MP0612 · Desenvolupament web en entorn client</title>
+  <title>🌐 Mòdul 0612 — Desenvolupament Web en Entorn Client</title>
   <link rel="stylesheet" href="style.css">
-  
+  <script defer src="main.js"></script>
 </head>
 
 <body>
-  <header>
-    <img src="assets/logo.png" alt="Logo del mòdul" class="logo">
-    <h1>MP0612 · Desenvolupament web en entorn client</h1>
-    <p>Cicle Formatiu de Grau Superior · Desenvolupament d’Aplicacions Web</p>
-    <h2>Institut Puig Castellar</h2>
+  <!-- Fons Matrix -->
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- Capçalera -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="assets/logo.png" alt="Institut Puig Castellar" class="logo">
+      <div class="hero-text">
+        <h1>Institut Puig Castellar</h1>
+        <h2>Cicle Formatiu de Grau Superior · Desenvolupament d’Aplicacions Web</h2>
+        <h3>Mòdul professional 0612 · Desenvolupament web en entorn client</h3>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>🌐 Benvinguts al mòdul</h2>
+  <main class="container">
+    <section class="fade-in">
+      <h2>🌍 Benvinguts al mòdul</h2>
       <p>
-        Aquest mòdul introdueix els fonaments del desenvolupament web en entorn client. 
-        Treballarem amb <strong>JavaScript</strong> i <strong>TypeScript</strong>, aprendrem a manipular el DOM, 
-        gestionar esdeveniments, validar formularis, crear aplicacions dinàmiques i comunicar-nos amb APIs externes.
+        Aquest índex interactiu et guiarà per tot el contingut del <strong>Mòdul 0612 — Desenvolupament web en entorn
+          client</strong>.
+        Aquí trobaràs la descripció, els objectius i tots els temes amb els seus subapartats.
+        Cada tema està enllaçat al seu contingut complet al Moodle o al repositori del curs.
       </p>
-      <p>
-        És la base per construir interfícies web modernes, accessibles i interactives. 
-        Tot el material, activitats i exàmens seguiran una mateixa estètica i estructura per facilitar la teva navegació.
+      <p class="nota">
+        💡 <strong>Consell Jedi:</strong> guarda aquest índex com a punt de partida del teu viatge — és la teva
+        <em>holocròn del codi</em>. ✨
       </p>
     </section>
 
-    <section>
-      <h2>📂 Accés als continguts</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>📘 Contingut complet del mòdul</h3>
-          <p>Accedeix a tots els temes, objectius i activitats del mòdul MP0612.</p>
-          <button onclick="location.href='contenido/contenido.html'">🌐 Obrir contingut</button>
-        </div>
-
-        <div class="card">
-          <h3>🧩 Tema 2 · Sintaxi bàsica de JavaScript</h3>
-          <p>Variables, operadors, condicions i bucles. El teu primer pas en la programació real amb JS.</p>
-          <button onclick="location.href='tema2/index.html'">🚀 Obrir tema 2</button>
-        </div>
-      </div>
+    <section class="fade-in">
+      <h2>🧠 Descripció general</h2>
+      <p>
+        Aquest mòdul introdueix els fonaments del desenvolupament web en entorn client.
+        Treballarem amb <strong>JavaScript</strong> i <strong>TypeScript</strong>, aprendrem a manipular el
+        <strong>DOM</strong>, gestionar esdeveniments, validar formularis,
+        crear aplicacions dinàmiques i comunicar-nos amb <strong>APIs</strong>.
+        En definitiva, ens formarem per construir interfícies modernes, accessibles i reactives. 🌐
+      </p>
+      <p class="friki">🧙‍♂️ Consell del mentor: “No copiis el codi. Entén-lo. Només així el codi t’obeirà.”</p>
     </section>
 
-    <section>
-      <h2>💡 Objectius generals</h2>
+    <section class="fade-in">
+      <h2>🎯 Objectius del mòdul</h2>
       <ul>
-        <li>Comprendre el funcionament del model client-servidor.</li>
-        <li>Aplicar la sintaxi i bones pràctiques del llenguatge JavaScript.</li>
-        <li>Manipular dinàmicament continguts amb el DOM.</li>
-        <li>Implementar aplicacions web reactives amb asincronia i dades remotes.</li>
+        <li>Entendre la diferència entre client i servidor.</li>
+        <li>Aplicar la sintaxi i bones pràctiques de JavaScript.</li>
+        <li>Manipular contingut web dinàmicament amb el DOM.</li>
+        <li>Implementar aplicacions interactives i asíncrones.</li>
+        <li>Utilitzar objectes, funcions i esdeveniments per estructurar el codi.</li>
+        <li>Comunicar-se amb APIs i tractar dades JSON.</li>
       </ul>
     </section>
-  </main>
 
+    <section class="fade-in">
+      <h2>📚 Temes del mòdul</h2>
+      <p>
+        A continuació trobaràs tots els temes i resultats d’aprenentatge (RA).
+        Cadascun conté objectius específics, durada i contingut detallat.
+      </p>
+
+      <div class="temes">
+        <a href="contenido/contenido.html" class="card">
+          <h3>📘 Índex complet del mòdul</h3>
+          <p>Objectius, recursos i guia del curs 2025–26.</p>
+        </a>
+
+        <a href="tema1/index.html" class="card">
+          <h3>🧭 Tema 1 — RA1</h3>
+          <p><strong>Selecció d’arquitectures i tecnologies client.</strong><br>Model client/servidor, navegadors, HTML,
+            CSS, JS, eines i frameworks.</p>
+        </a>
+
+        <a href="tema2/index.html" class="card">
+          <h3>🧩 Tema 2 — RA2</h3>
+          <p><strong>Sintaxi bàsica de JavaScript.</strong><br>Variables, constants, operadors, condicions i bucles.</p>
+        </a>
+
+        <a href="tema3/index.html" class="card">
+          <h3>🧠 Tema 3 — RA3</h3>
+          <p><strong>Ús dels objectes predefinits del llenguatge.</strong><br>Objectes natius (Math, Date, String),
+            globals i interacció amb l’usuari.</p>
+        </a>
+
+        <a href="tema4/index.html" class="card">
+          <h3>⚙️ Tema 4 — RA4</h3>
+          <p><strong>Programació amb estructures definides per l’usuari.</strong><br>Funcions, arrays, objectes, classes
+            i patrons bàsics.</p>
+        </a>
+
+        <a href="tema5/index.html" class="card">
+          <h3>🎛️ Tema 5 — RA5</h3>
+          <p><strong>Aplicacions interactives amb esdeveniments.</strong><br>Captura d’esdeveniments, validació i UX
+            accessible.</p>
+        </a>
+
+        <a href="tema6/index.html" class="card">
+          <h3>🧬 Tema 6 — RA6</h3>
+          <p><strong>Utilització del Model d’Objectes del Document (DOM).</strong><br>Manipulació, creació i eliminació
+            d’elements HTML.</p>
+        </a>
+
+        <a href="tema7/index.html" class="card">
+          <h3>🚀 Tema 7 — RA7</h3>
+          <p><strong>Aplicacions dinàmiques amb comunicació asíncrona.</strong><br>Fetch API, JSON, promeses i connexió
+            amb APIs REST.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  <button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button> <!-- Footer verd Matrix -->
   <footer>
-    Material didàctic · Institut Puig Castellar · Desenvolupament d’Aplicacions Web © 2025
+    <p>© 2025 Institut Puig Castellar · GS DAW · Mòdul 0612 — Desenvolupament Web en Entorn Client</p>
+    <p class="friki">💾 “No hi ha error 404 si saps on buscar.” 🧠</p>
   </footer>
-  <script defer src="main.js"></script>
 </body>
+
 </html>
