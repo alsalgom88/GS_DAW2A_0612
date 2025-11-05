@@ -3,39 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GS_DAW2A_0612</title>
+  <title>MP0612 · Desenvolupament web en entorn client</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="main.js"></script>
+  
 </head>
+
 <body>
   <header>
-    <img src="assets/logo.png" alt="Logo del curs" class="logo">
-    <h1>GS_DAW2A_0612</h1>
-    <p class="subtitle">Projectes · UF1 + UF2 · MP6 Desenvolupament d’Aplicacions Web</p>
+    <img src="assets/logo.png" alt="Logo del mòdul" class="logo">
+    <h1>MP0612 · Desenvolupament web en entorn client</h1>
+    <p>Cicle Formatiu de Grau Superior · Desenvolupament d’Aplicacions Web</p>
+    <h2>Institut Puig Castellar</h2>
   </header>
 
   <main>
-    <section class="card">
-      <h2>📘 Benvinguda</h2>
+    <section>
+      <h2>🌐 Benvinguts al mòdul</h2>
       <p>
-        Aquest espai conté els projectes i activitats del grup <strong>GS_DAW2A_0612</strong>.
-        Pots explorar els diferents mòduls, recursos i exercicis desenvolupats durant el curs.
+        Aquest mòdul introdueix els fonaments del desenvolupament web en entorn client. 
+        Treballarem amb <strong>JavaScript</strong> i <strong>TypeScript</strong>, aprendrem a manipular el DOM, 
+        gestionar esdeveniments, validar formularis, crear aplicacions dinàmiques i comunicar-nos amb APIs externes.
       </p>
-      <button id="btnWelcome">✨ Mostra un missatge</button>
+      <p>
+        És la base per construir interfícies web modernes, accessibles i interactives. 
+        Tot el material, activitats i exàmens seguiran una mateixa estètica i estructura per facilitar la teva navegació.
+      </p>
     </section>
 
-    <section class="card">
-      <h2>📂 Recursos</h2>
+    <section>
+      <h2>📂 Accés als continguts</h2>
+      <div class="card-container">
+        <div class="card">
+          <h3>📘 Contingut complet del mòdul</h3>
+          <p>Accedeix a tots els temes, objectius i activitats del mòdul MP0612.</p>
+          <button onclick="location.href='contenido/contenido.html'">🌐 Obrir contingut</button>
+        </div>
+
+        <div class="card">
+          <h3>🧩 Tema 2 · Sintaxi bàsica de JavaScript</h3>
+          <p>Variables, operadors, condicions i bucles. El teu primer pas en la programació real amb JS.</p>
+          <button onclick="location.href='tema2/index.html'">🚀 Obrir tema 2</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>💡 Objectius generals</h2>
       <ul>
-        <li><a href="./projectes/">Projectes del curs</a></li>
-        <li><a href="./apunts/">Apunts i materials</a></li>
-        <li><a href="./avaluacions/">Avaluacions i rúbriques</a></li>
+        <li>Comprendre el funcionament del model client-servidor.</li>
+        <li>Aplicar la sintaxi i bones pràctiques del llenguatge JavaScript.</li>
+        <li>Manipular dinàmicament continguts amb el DOM.</li>
+        <li>Implementar aplicacions web reactives amb asincronia i dades remotes.</li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Institut Puig Castellar · Desenvolupament Web · Fets amb 💙 per l’alumnat</p>
+    Material didàctic · Institut Puig Castellar · Desenvolupament d’Aplicacions Web © 2025
   </footer>
+  <script defer src="main.js"></script>
 </body>
 </html>
