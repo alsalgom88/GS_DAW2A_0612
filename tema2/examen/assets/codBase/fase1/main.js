@@ -1,34 +1,37 @@
 'use strict';
+/* ======================================================
+   🧩 Fase 1 — Càlcul de nota final amb prompt() i alert()
+   ------------------------------------------------------
+   Objectiu:
+   - Demanar el nom i tres notes (teoria, pràctica, actitud)
+   - Validar que les notes siguin numèriques i estiguin entre 0 i 10
+   - Calcular la nota final aplicant la fórmula del temari
+   - Mostrar si l’alumne ha aprovat o suspès
 
-/*
-  🧩 Fase 1 — Un sol venedor
-  Objectiu: Demanar dades d’un venedor, calcular la seva comissió i comprovar si ha superat l’objectiu.
-  🧠 Recorda: aquí només s’utilitzen prompt(), alert() i console.log()
-*/
+   💡 Pistes:
+   - Usa prompt() per demanar les dades
+   - Converteix les entrades a números amb Number()
+   - Usa isNaN() per validar valors no numèrics
+   - Mostra missatges a la consola amb console.log()
+   - Mostra el resultat final amb alert()
+   ====================================================== */
 
-// TODO: 1️⃣ Declara la constant COMISSIO amb el valor 0.1
-// const COMISSIO = ...;
+// 1️⃣ Demana el nom de l’alumne
+// const nom = prompt("Nom de l'alumne:");
 
-// TODO: 2️⃣ Demana el nom del venedor amb prompt()
-// const nom = prompt("Introdueix el nom del venedor:");
+// 2️⃣ Demana tres notes (teoria, pràctica, actitud)
+// ⚠️ Pista: guarda-les com a constants i converteix-les amb Number()
 
-// TODO: 3️⃣ Demana les vendes i l’objectiu amb prompt()
-// 👉 Usa Number() per convertir-ho a número
-// const vendes = Number(prompt("Import total de vendes (€):"));
-// const objectiu = Number(prompt("Objectiu setmanal (€):"));
+// 3️⃣ Valida les dades
+// Usa una condició amb if per comprovar:
+// - Que el nom no estigui buit
+// - Que les notes no siguin NaN i estiguin entre 0 i 10
+// 💡 Exemple: isNaN(teoria) || teoria < 0 || teoria > 10
 
-// TODO: 4️⃣ Comprova si les dades són vàlides (nom buit, valors negatius o NaN)
-// if (...) { alert("❌ Dades incorrectes!"); } else { ... }
+// 4️⃣ Calcula la nota final amb la fórmula del temari:
+// teoria * 0.4 + practica * 0.5 + actitud * 0.1
 
-// TODO: 5️⃣ Calcula la comissió (vendes * COMISSIO)
-// const totalComissio = ...;
-
-// TODO: 6️⃣ Comprova si ha superat l’objectiu (vendes >= objectiu)
-// const supera = ...;
-
-// TODO: 7️⃣ Mostra els resultats amb alert() i console.log()
-/*
-  Exemple d’output:
-  alert(`✅ ${nom} ha guanyat ${totalComissio.toFixed(2)}€ de comissió.`);
-  console.log("Ha superat l’objectiu?", supera);
-*/
+// 5️⃣ Mostra el resultat a la consola i amb alert()
+// Usa console.log() per mostrar el procés de càlcul
+// Exemple esperat a la consola:
+// Nom: Marta | Teoria: 7 | Pràctica: 8 | Actitud: 9 → Nota final: 7.9

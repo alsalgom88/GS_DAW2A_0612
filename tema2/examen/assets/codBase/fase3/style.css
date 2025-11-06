@@ -1,0 +1,61 @@
+/* ======================================================
+   🧩 Fase 3 — Estils del formulari i secció de resultats
+   ====================================================== */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  padding: 40px;
+  color: #1e293b;
+}
+
+h1 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e1;
+}
+
+.botons {
+  margin-top: 15px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-right: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1e3a8a;
+}
+
+#resultat {
+  margin-top: 25px;
+  padding: 15px;
+  background: #e2e8f0;
+  border-radius: 8px;
+}
