@@ -1,47 +1,39 @@
 'use strict';
 /* ======================================================
-   🧩 Fase 3 — Formulari HTML i manipulació del DOM
+   🧩 Fase 3 — Miniaplicació de notes amb formulari (DOM preconfigurat)
    ------------------------------------------------------
    Objectiu:
-   - Afegir alumnes amb les seves notes mitjançant un formulari
-   - Validar les dades (nom i nota)
-   - Mostrar resultats i mitjana dins del div #resultat
-
-   💡 Pistes:
-   - Usa document.querySelector() per accedir als inputs i botons
-   - Guarda els alumnes en un array d’objectes { nom, nota }
-   - Fes servir addEventListener() per detectar clics als botons
-   - Mostra els resultats dins del DOM amb innerHTML o textContent
+   - Practicar arrays i condicions sense manipular el DOM.
+   - Només cal completar la lògica de càlcul i validació.
    ====================================================== */
 
-// 1️⃣ Crea un array buit per desar els alumnes
-// const alumnes = [];
+// 🧱 Array d'alumnes (ja creat)
+const alumnes = [];
 
-// 2️⃣ Accedeix als elements HTML amb querySelector()
-// Exemple:
-// const nomInput = document.querySelector('#nom');
-// const notaInput = document.querySelector('#nota');
-// const resultatDiv = document.querySelector('#resultat');
+// ⚙️ Simulació d'entrades (no cal modificar res aquí)
+function obtenirDades() {
+  const nom = prompt("Nom de l'alumne:");
+  const nota = Number(prompt(`Nota de ${nom} (0–10):`));
+  return { nom, nota };
+}
 
-// 3️⃣ Afegeix un event listener al botó "Afegir alumne"
-// Quan es faci clic:
-//   - Llegeix els valors dels inputs
-//   - Valida el nom (no buit) i la nota (0–10)
-//   - Usa isNaN() per comprovar si la nota és numèrica
-//   - Si és correcte, afegeix l’alumne a l’array
-//   - Mostra un missatge al div amb textContent
-// 💡 Mostra també l’estat actual de l’array amb console.log(alumnes);
+// 📥 Funció principal per afegir alumnes
+function afegirAlumne() {
+  const { nom, nota } = obtenirDades();
 
-// 4️⃣ Afegeix un event listener al botó "Veure resum"
-// Quan es premi:
-//   - Calcula la mitjana del grup
-//   - Ordena els alumnes per nota (descendent)
-//   - Mostra la llista i la mitjana dins del div amb innerHTML
-//   - Pots usar plantilles literals per mostrar-ho de forma bonica
-// Exemple de format esperat:
-//   Mitjana: 7.3
-//   1. Júlia - 9
-//   2. Pau - 6.5
+  // 👉 Escriu aquí la validació amb isNaN(), <0, >10, nom buit...
 
-// 5️⃣ Fes servir console.log() per depurar
-// Mostra cada pas del procés: afegir, validar, calcular, etc.
+  // 👉 Si és correcte, afegeix a l’array alumnes.push({nom, nota})
+  // 👉 Mostra per consola l’alumne afegit i l’array complet
+}
+
+// 📊 Funció per calcular el resum del grup
+function veureResum() {
+  // 👉 Calcula mitjana, millor i pitjor alumne, aprovats i suspesos
+  // 👉 Mostra-ho amb console.log()
+}
+
+// 🚀 Execució (ja feta)
+// No cal que toquis aquestes crides: simulen el comportament del formulari.
+afegirAlumne();
+veureResum();

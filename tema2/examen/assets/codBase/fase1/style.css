@@ -1,25 +1,30 @@
-/* ======================================================
-   🧩 Fase 1 — Estils bàsics per a l’examen NF2B
-   ------------------------------------------------------
-   Només per millorar la llegibilitat de la pàgina.
-   No és necessari afegir disseny avançat.
-   ====================================================== */
+/* =========================================================
+   🎨 Fase 1 — Estils bàsics d’estructura i llegibilitat
+   ---------------------------------------------------------
+   Aquesta fase no necessita disseny avançat.
+   Només ajuda a llegir el text amb més comoditat.
+   ========================================================= */
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9fafb;
+  background-color: #f8fafc;
   color: #1e293b;
-  line-height: 1.6;
   padding: 40px;
+  line-height: 1.6;
 }
 
 h1 {
   color: #1e3a8a;
-  font-size: 1.6em;
+  font-size: 1.5em;
+}
+
+p {
+  max-width: 700px;
 }
 
 code {
   background: #e2e8f0;
-  padding: 2px 5px;
+  padding: 2px 6px;
   border-radius: 4px;
+  font-family: monospace;
 }
