@@ -1,104 +1,810 @@
 <!DOCTYPE html>
 <html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>💼 Examen NF2 — 2DAW A | Tema 2: Sintaxi bàsica de JavaScript</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #f9fafb;
-      color: #1e293b;
-      margin: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #1e3a8a;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-    section {
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      padding: 30px;
-      margin-bottom: 25px;
-    }
-    h1, h2, h3 {
-      color: #1e3a8a;
-    }
-    code, pre {
-      background: #f3f4f6;
-      padding: 10px;
-      border-radius: 8px;
-      display: block;
-      white-space: pre-wrap;
-    }
-    ul { margin-left: 20px; }
-    .nota {
-      background: #fef9c3;
-      border-left: 6px solid #eab308;
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 8px 14px;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 20px;
-    }
-    .btn:hover { background: #1e40af; }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #f1f5f9;
-      font-size: 0.9em;
-      color: #475569;
-    }
-  </style>
-</head>
-<body>
 
-  <header>
-    <h1>💼 Examen NF2 — 2DAW A</h1>
-    <p>Tema 2: Sintaxi bàsica de JavaScript</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💼 Examen NF2B — 2DAW B | Tema 2: Sintaxi bàsica de JavaScript</title>
+
+  <!-- 🔍 SEO -->
+  <meta name="description"
+    content="Examen NF2B del Mòdul 0612 de Desenvolupament web en entorn client · Institut Puig Castellar. Tema 2: Sintaxi bàsica de JavaScript, variables, bucles, estructures i DOM." />
+  <meta name="keywords" content="DAW, JavaScript, Examen, Institut Puig Castellar, Sintaxi, Mòdul 0612, Web Client" />
+  <meta name="author" content="Institut Puig Castellar · Departament d’Informàtica" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1e3a8a" />
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Examen NF2B — Tema 2 · JavaScript bàsic" />
+  <meta property="og:description"
+    content="Examen oficial de Desenvolupament Web en Entorn Client (DAW2B). Tema 2: Sintaxi bàsica de JavaScript." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="assets/examen-tema2b-og.jpg" />
+  <meta property="og:locale" content="ca_ES" />
+
+  <!-- 🧩 Recursos externs -->
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 🔝 HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <img src="assets/logo.png" alt="Logo Institut Puig Castellar" />
+      <div class="header-info">
+        <h2>Institut Puig Castellar · Santa Coloma de Gramenet</h2>
+        <p>Cicle Formatiu de Grau Superior · Mòdul professional 0612 · Desenvolupament web en entorn client</p>
+        <h3>💼 Examen NF2B — 2DAW B · Tema 2: Sintaxi bàsica de JavaScript</h3>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Navegació principal">
+      <a href="#" data-section="objectiu">Objectiu</a>
+      <a href="#" data-section="estructura">Estructura</a>
+      <a href="#" data-section="fase1">Fase 1</a>
+      <a href="#" data-section="fase2">Fase 2</a>
+      <a href="#" data-section="fase3">Fase 3</a>
+      <a href="#" data-section="recursos">Recursos</a>
+      <a href="#" data-section="checklist">Checklist</a>
+      <a href="#" data-section="entrega">Entrega</a>
+    </nav>
+
+    <div class="nav-extra">
+      <a href="https://alsalgom88.github.io/GS_DAW2A_0612/index.html" class="btn-header">🏠 Inici</a>
+      <a href="../index.html" class="btn-header">↩️ Tornar al Tema 2</a>
+    </div>
   </header>
 
+  <!-- 📘 CONTINGUT PRINCIPAL -->
   <main>
 
     <!-- OBJECTIU -->
-    <section>
+    <section id="objectiu" class="active">
       <h2>🎯 Objectiu general</h2>
+
       <p>
-        Desenvolupar una <strong>miniaplicació web</strong> que permeti gestionar els <strong>torns de treballadors</strong> d’una empresa,
-        aplicant la sintaxi bàsica de JavaScript: declaració de variables i constants, operadors, condicions, bucles,
-        tractament d’errors i bones pràctiques de codi.
+        L’objectiu d’aquest examen és posar en pràctica tots els coneixements adquirits durant el
+        <strong>Tema 2: Sintaxi bàsica de JavaScript</strong>. Es tracta de desenvolupar una
+        <strong>miniaplicació web funcional</strong> capaç de gestionar les <strong>notes i observacions
+          d’un grup d’alumnes</strong>, aplicant els conceptes fonamentals del llenguatge.
       </p>
+
       <p>
-        El projecte s’ha de fer amb <strong>HTML, CSS i JavaScript pur</strong> (sense frameworks).
-        Tot el codi ha de ser propi, clar i comentat.
+        Durant aquest exercici es treballaran aspectes essencials de la programació en JavaScript:
       </p>
+
+      <ul>
+        <li><strong>Variables i constants:</strong> declaració i ús correcte amb <code>let</code> i <code>const</code>.
+        </li>
+        <li><strong>Operadors i expressions:</strong> càlculs aritmètics, lògics i combinats.</li>
+        <li><strong>Condicionals:</strong> ús de <code>if</code>, <code>else if</code> i <code>switch</code> per
+          gestionar diferents casos.</li>
+        <li><strong>Bucles:</strong> estructures com <code>for</code> i <code>while</code> per processar múltiples
+          elements.</li>
+        <li><strong>Arrays i objectes:</strong> emmagatzematge estructurat d’alumnes i notes.</li>
+        <li><strong>Funcions:</strong> modularització del codi i reutilització de lògiques repetitives.</li>
+        <li><strong>Interacció amb l’usuari:</strong> ús de <code>alert()</code>, <code>prompt()</code> i manipulació
+          bàsica del <code>DOM</code>.</li>
+        <li><strong>Validació i tractament d’errors:</strong> comprovacions de dades i missatges clars per a l’usuari.
+        </li>
+      </ul>
+
+      <p>
+        El projecte està dividit en <strong>tres fases progressives</strong>:
+      </p>
+
+      <ol>
+        <li><strong>Fase 1:</strong> càlcul de notes individuals mitjançant diàlegs <code>prompt()</code> i
+          <code>alert()</code>.
+        </li>
+        <li><strong>Fase 2:</strong> gestió de múltiples alumnes amb arrays i tractament d’informació agregada.</li>
+        <li><strong>Fase 3:</strong> construcció d’una interfície HTML interactiva que utilitza el DOM per mostrar
+          resultats.</li>
+      </ol>
+
+      <p>
+        L’avaluació es basarà en la <strong>correcció del codi</strong>, la <strong>claredat dels comentaris</strong>,
+        la <strong>validació de dades</strong> i la <strong>capacitat d’adaptar la lògica del programa</strong> a cada
+        fase.
+        També es valorarà la <strong>organització dels fitxers</strong> i l’ús correcte de bones pràctiques.
+      </p>
+
+      <p class="nota">
+        💡 Recorda: l’examen és individual. Es valorarà especialment l’autonomia, la claredat en l’estructura del codi i
+        la seva funcionalitat completa.
+      </p>
+
+      <div class="nav-btns">
+        <button class="btn disabled">🟢 Inici d'examen</button>
+        <button class="btn next" data-next="estructura">Següent →</button>
+      </div>
     </section>
 
     <!-- ESTRUCTURA -->
-    <section>
+    <section id="estructura">
       <h2>📦 Estructura del projecte</h2>
-      <pre><code>ExamenNF2_2DAWA_CognomNom/
+
+      <p>
+        El projecte s’ha de presentar seguint una <strong>estructura clara, ordenada i coherent</strong>.
+        Cada fase correspon a una versió més completa del mateix exercici i ha de tenir <strong>els seus propis fitxers
+          HTML, CSS i JavaScript</strong>.
+      </p>
+
+      <pre><code>ExamenNF2B_2DAWB_CognomNom/
 ├── fase1/
-│   ├── index.html
-│   ├── style.css
-│   └── main.js
-├── fase1_5/
+│   ├── index.html      → Exercici base amb prompt(), alert() i càlcul de notes individuals
+│   ├── style.css       → Estils bàsics per donar presentació mínima
+│   └── main.js         → Lògica principal en JS amb variables, operadors i condicions
+│
+├── fase2/
+│   ├── index.html      → Interfície millorada o mínima per mostrar sortida al navegador
+│   ├── style.css       → Estils millorats i estructura visual coherent
+│   └── main.js         → Gestió de múltiples alumnes amb arrays, bucles i funcions
+│
+├── fase3/
+│   ├── index.html      → Formulari complet amb inputs, botons i secció de resultats
+│   ├── style.css       → Disseny visual net i responsive, coherència amb el tema del curs
+│   └── main.js         → Manipulació del DOM, validacions i presentació interactiva de dades
+│
+└── notes.txt           → Reflexió personal sobre l’exercici, dificultats i aprenentatges</code></pre>
+
+      <p>
+        Cada carpeta <code>faseX</code> ha de poder funcionar de manera independent, és a dir,
+        si s’obre el fitxer <code>index.html</code> de qualsevol fase, el projecte ha de funcionar correctament
+        sense dependre d’altres carpetes.
+      </p>
+
+      <div class="nota">
+        📁 <strong>Recomanació:</strong> assegura’t que tots els fitxers tenen noms coherents,
+        utilitzen comentaris explicatius i mantenen el mateix estil de codi al llarg de les tres fases.
+      </div>
+
+      <p>
+        La progressió esperada és la següent:
+      </p>
+      <ul>
+        <li><strong>Fase 1:</strong> Implementar la lògica bàsica i entendre la interacció amb l’usuari.</li>
+        <li><strong>Fase 2:</strong> Afegir estructura de dades (arrays) i millorar la lògica computacional.</li>
+        <li><strong>Fase 3:</strong> Construir una interfície web dinàmica i mostrar resultats al DOM.</li>
+      </ul>
+
+      <p>
+        L’organització del projecte també serà part de la nota: es valorarà la claredat, la netedat dels fitxers,
+        la presència de comentaris, i la correcció en l’ús de bones pràctiques de programació.
+      </p>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="objectiu">← Anterior</button>
+        <button class="btn next" data-next="fase1">Següent →</button>
+      </div>
+    </section>
+
+    <!-- FASE 1 -->
+    <section id="fase1">
+      <h2>🧩 Fase 1 — Càlcul de nota final amb <code>prompt()</code> i <code>alert()</code></h2>
+
+      <p>
+        Aquesta primera fase és la <strong>part essencial i obligatòria</strong> de l’examen.
+        Si completes correctament aquesta part, hauràs demostrat haver assimilat els coneixements del
+        <strong>Tema 2: Sintaxi bàsica de JavaScript</strong>, i per tant ja hauràs superat l’avaluació mínima del
+        mòdul.
+      </p>
+
+      <p>
+        L’exercici posa en pràctica tots els elements fonamentals del tema:
+      </p>
+      <ul>
+        <li>Declaració i ús de variables i constants amb <code>let</code> i <code>const</code>.</li>
+        <li>Aplicació d’operadors aritmètics i expressions matemàtiques.</li>
+        <li>Ús de condicions amb <code>if</code> i <code>else</code> per avaluar situacions diferents.</li>
+        <li>Interacció amb l’usuari mitjançant <code>prompt()</code> i <code>alert()</code>.</li>
+        <li>Conversió de tipus (de text a número) i validació de dades amb <code>isNaN()</code>.</li>
+        <li>Aplicació d’operadors lògics <code>||</code> (OR) i <code>&&</code> (AND) per combinar condicions.</li>
+        <li>Organització bàsica del projecte amb fitxers separats <code>HTML</code>, <code>CSS</code> i <code>JS</code>.
+        </li>
+      </ul>
+
+      <h3>🎯 Objectiu específic</h3>
+      <p>
+        Crear un petit programa que demani a l’usuari les seves dades i mostri un resultat basat en càlculs i
+        condicions.
+        L’aplicació ha de calcular la <strong>nota final</strong> d’un alumne a partir de tres valors:
+        <code>teoria</code>, <code>pràctica</code> i <code>actitud</code>.
+      </p>
+
+      <h3>🪜 Passos recomanats</h3>
+      <ol>
+        <li>
+          Declara les variables per emmagatzemar el nom i les tres notes.
+          Fes servir <code>prompt()</code> per demanar aquestes dades a l’usuari.
+          <div class="nota">💡 Recorda: <code>prompt()</code> retorna una cadena (text). Necessitaràs convertir-la a
+            número amb <code>Number()</code> per fer càlculs.</div>
+        </li>
+
+        <li>
+          Comprova que les dades siguin vàlides:
+          <ul>
+            <li>El nom no pot estar buit.</li>
+            <li>Les notes han d’estar entre <code>0</code> i <code>10</code>.</li>
+            <li>Cap dada pot ser <code>NaN</code> (no numèrica).</li>
+          </ul>
+          <div class="nota">💡 Pista: pots combinar condicions amb <code>||</code> (OR) o <code>&&</code> (AND) per
+            comprovar múltiples criteris.</div>
+        </li>
+
+        <li>
+          Calcula la nota final aplicant la següent fórmula ponderada:
+          <pre><code>notaFinal = teoria * 0.4 + pràctica * 0.5 + actitud * 0.1</code></pre>
+          Desa el resultat en una variable i mostra’l també per consola amb <code>console.log()</code> per comprovar els
+          càlculs.
+        </li>
+
+        <li>
+          Mostra el resultat amb <code>alert()</code>, indicant:
+          <ul>
+            <li>El nom de l’alumne.</li>
+            <li>La seva nota final amb dos decimals.</li>
+            <li>Si ha aprovat (nota ≥ 5) o suspès (nota &lt; 5).</li>
+          </ul>
+        </li>
+
+        <li>
+          Finalment, prova el teu programa amb diversos valors per assegurar-te que les validacions funcionen
+          correctament.
+        </li>
+      </ol>
+
+      <h3>🧠 Sobre <code>isNaN()</code></h3>
+      <p>
+        La funció <code>isNaN(valor)</code> comprova si un valor <strong>no és un número</strong>.
+        És essencial per evitar càlculs amb valors incorrectes. Retorna <code>true</code> quan el valor no és numèric:
+      </p>
+      <pre><code>isNaN(5);       // false → és un número
+isNaN("hola");  // true  → no és un número
+isNaN("");      // false → es converteix a 0</code></pre>
+      <p>
+        Pots combinar <code>isNaN()</code> amb altres condicions per assegurar que les dades són correctes:
+      </p>
+      <pre><code>if (!nom || isNaN(teoria) || teoria < 0 || teoria > 10) {
+  console.log("⚠️ Error: dades incorrectes!");
+}</code></pre>
+
+      <h3>📊 Exemple esperat de sortida a la consola</h3>
+      <pre><code>Nom de l’alumne: Marta
+Notes: teoria=7, pràctica=8, actitud=9
+Nota final: 7.9
+Resultat: ✅ Aprovat</code></pre>
+
+      <div class="nota">
+        🔹 En aquesta fase, has de fer servir <strong>console.log()</strong> per mostrar totes les dades intermèdies
+        (entrades, càlculs, resultats) i <strong>alert()</strong> només per mostrar el missatge final.
+        Aprendre a mirar la consola és fonamental per depurar errors i entendre el flux del programa.
+      </div>
+
+      <h3>🧠 Recomanacions</h3>
+      <ul>
+        <li>Inclou <code>'use strict';</code> al principi del fitxer <code>main.js</code>.</li>
+        <li>Comenta les parts més importants del teu codi per explicar què fa cada línia.</li>
+        <li>Evita utilitzar <code>var</code> o comparacions amb <code>==</code>; fes servir
+          <code>let</code>/<code>const</code> i <code>===</code>.
+        </li>
+        <li>Si apareixen errors, revisa la consola del navegador (<strong>F12 → Consola</strong>).</li>
+      </ul>
+
+      <h3>📁 Estructura mínima</h3>
+      <pre><code>fase1/
+├── index.html   → Estructura bàsica amb títol i enllaç al JS
+├── style.css    → (Opcional) petits estils de suport
+└── main.js      → Codi JavaScript amb lògica de càlcul i validació</code></pre>
+
+      <div class="nota">
+        ✅ Completar correctament aquesta fase ja demostra la teva competència en els continguts del Tema 2
+        i és suficient per <strong>aprovar l’examen</strong>.
+        Les fases següents són ampliacions i millores opcionals per obtenir una qualificació superior.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="estructura">← Anterior</button>
+        <button class="btn next" data-next="fase2">Següent →</button>
+      </div>
+    </section>
+
+    <!-- FASE 2 -->
+    <section id="fase2">
+      <h2>🧩 Fase 2 — Gestor de notes amb arrays i funcions</h2>
+
+      <p>
+        Aquesta segona fase representa una <strong>millora significativa respecte a la Fase 1</strong>.
+        Aquí ja no treballaràs amb un sol alumne, sinó amb <strong>un grup complet</strong>.
+        L’objectiu és demostrar que saps treballar amb <strong>estructures de dades</strong> i aplicar una lògica més
+        general i organitzada.
+      </p>
+
+      <p>
+        Si completes correctament aquesta fase, demostraràs domini dels conceptes següents:
+      </p>
+      <ul>
+        <li>Ús de <strong>bucles</strong> (<code>for</code>, <code>while</code>) per repetir accions.</li>
+        <li>Creació i gestió d’<strong>arrays</strong> per emmagatzemar múltiples elements.</li>
+        <li>Definició i ús d’<strong>objectes</strong> amb propietats com <code>{ nom, nota }</code>.</li>
+        <li>Aplicació de <strong>funcions</strong> per dividir el codi en parts més clares i reutilitzables.</li>
+        <li>Ús de mètodes d’array com <code>push()</code>, <code>reduce()</code> o <code>forEach()</code>.</li>
+      </ul>
+
+      <h3>🎯 Objectiu específic</h3>
+      <p>
+        Crear un programa capaç de <strong>gestionar les notes de diversos alumnes</strong> d’un grup,
+        calcular la seva mitjana, identificar qui té la nota més alta i la més baixa, i mostrar un resum final
+        amb el nombre d’aprovats i suspesos.
+      </p>
+
+      <h3>🪜 Passos recomanats</h3>
+      <ol>
+        <li>
+          Demana amb <code>prompt()</code> quants alumnes vols afegir i desa aquest valor en una variable numèrica
+          que controlarà el bucle.
+          <div class="nota">💡 Pista: converteix el text rebut a número amb <code>Number()</code> o
+            <code>parseInt()</code>.
+          </div>
+        </li>
+
+        <li>
+          Crea un <strong>array buit</strong> per desar la informació de cada alumne.
+          Cada element de l’array serà un objecte amb dues propietats: <code>nom</code> i <code>nota</code>.
+          <div class="nota">💡 Recorda: un objecte es defineix entre claus, per exemple
+            <code>{ nom: "Anna", nota: 8 }</code>.
+          </div>
+        </li>
+
+        <li>
+          Utilitza un <strong>bucle</strong> per repetir la lectura de dades tantes vegades com alumnes vulguis afegir.
+          Dins del bucle:
+          <ul>
+            <li>Demanar el <code>nom</code> i la <code>nota</code> de l’alumne.</li>
+            <li>Validar que la nota és un número vàlid (entre 0 i 10) amb <code>isNaN()</code>.</li>
+            <li>Afegir l’alumne a l’array mitjançant <code>push()</code>.</li>
+          </ul>
+        </li>
+
+        <li>
+          Un cop introduïdes totes les dades, calcula:
+          <ul>
+            <li>La nota mitjana de tot el grup.</li>
+            <li>El millor alumne (nota més alta) i el pitjor alumne (nota més baixa).</li>
+            <li>El nombre total d’aprovats (nota ≥ 5) i suspesos (nota &lt; 5).</li>
+          </ul>
+          <div class="nota">
+            💡 Pista: pots fer servir mètodes com <code>reduce()</code>, <code>Math.max()</code> o
+            <code>Math.min()</code> per obtenir resultats globals.
+          </div>
+        </li>
+
+        <li>
+          Mostra tota aquesta informació a la <strong>consola del navegador</strong> amb <code>console.log()</code>.
+          Si vols, pots afegir un <code>alert()</code> final amb un resum formatat amb salts de línia <code>\n</code>.
+        </li>
+      </ol>
+
+      <h3>🧠 Recordatori de <code>isNaN()</code></h3>
+      <p>
+        <code>isNaN()</code> comprova si un valor <strong>no és un número</strong>.
+        És fonamental per validar entrades incorrectes abans de fer càlculs:
+      </p>
+      <pre><code>if (isNaN(nota) || nota < 0 || nota > 10) {
+  console.log("⚠️ Nota no vàlida:", nota);
+}</code></pre>
+
+      <h3>📊 Exemple esperat de sortida amb <code>console.log()</code></h3>
+      <pre><code>Llista d'alumnes:
+[
+  { nom: "Pau", nota: 6 },
+  { nom: "Júlia", nota: 9 },
+  { nom: "Marc", nota: 4 }
+]
+Mitjana del grup: 6.33
+Millor alumne: Júlia (9)
+Pitjor alumne: Marc (4)
+Aprovats: 2, Suspesos: 1</code></pre>
+
+      <div class="nota">
+        🔹 En aquesta fase <strong>ja no s’utilitza alert()</strong>.
+        Tots els resultats, missatges d’error i càlculs es mostren exclusivament amb <strong>console.log()</strong>.
+        El codi ha d’estar ben comentat, llegible i estructurat amb claredat.
+      </div>
+
+      <h3>🧩 Estructura del codi recomanada</h3>
+      <ul>
+        <li>Declara les variables globals al principi.</li>
+        <li>Fes servir <strong>funcions</strong> per separar parts de la lògica (per exemple,
+          <code>calculaMitjana()</code>).
+        </li>
+        <li>Procura que el codi sigui clar, amb comentaris breus i línies ordenades.</li>
+        <li>Valida totes les dades abans d’afegir-les a l’array.</li>
+      </ul>
+
+      <h3>🧠 Conceptes clau que has d’aplicar</h3>
+      <ul>
+        <li><strong>Arrays</strong> i objectes simples</li>
+        <li><strong>Bucles</strong> (<code>for</code> i <code>for...of</code>)</li>
+        <li><strong>Comparacions</strong> i condicions compostes</li>
+        <li><strong>Operacions matemàtiques</strong> amb mètodes d’array (<code>reduce()</code>, <code>forEach()</code>,
+          <code>filter()</code>)
+        </li>
+        <li><strong>Organització i estructuració</strong> del codi en blocs lògics</li>
+      </ul>
+
+      <h3>📁 Estructura mínima del projecte</h3>
+      <pre><code>fase2/
+├── index.html   → Conté una petita interfície o sortida al navegador
+├── style.css    → Estils millorats i més clars que la fase anterior
+└── main.js      → Codi amb arrays, funcions i càlculs globals del grup</code></pre>
+
+      <div class="nota">
+        🚀 Aquesta fase <strong>amplia la Fase 1</strong> i permet comprovar si saps aplicar els coneixements
+        de programació estructurada amb dades complexes.
+        Si completes aquesta part de manera correcta i clara, aconseguiràs una <strong>nota notable o
+          excel·lent</strong>.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="fase1">← Anterior</button>
+        <button class="btn next" data-next="fase3">Següent →</button>
+      </div>
+    </section>
+    <!-- FASE 3 -->
+    <section id="fase3">
+      <h2>🧩 Fase 3 — Formulari HTML i manipulació del DOM</h2>
+
+      <p>
+        Aquesta tercera fase és el <strong>repte final del projecte</strong> i posa a prova la teva capacitat per
+        combinar
+        la lògica de programació amb la interacció visual del navegador.
+        En aquesta etapa treballaràs amb el <strong>DOM (Document Object Model)</strong> per manipular els elements
+        HTML,
+        respondre a accions de l’usuari i mostrar els resultats a la pròpia pàgina.
+      </p>
+
+      <div class="nota">
+        ⚠️ Aquesta fase permet detectar si realment entens el llenguatge i el DOM, o si el codi ha estat generat
+        automàticament.
+        No es valorarà el disseny, sinó la <strong>comprensió, coherència i lògica</strong> de la solució.
+      </div>
+
+      <h3>🎯 Objectiu específic</h3>
+      <p>
+        Crear una <strong>miniaplicació web interactiva</strong> que permeti introduir alumnes amb les seves notes
+        i visualitzar un resum dins de la mateixa pàgina.
+      </p>
+
+      <ul>
+        <li>Formulari amb camps per <strong>nom</strong> i <strong>nota</strong>.</li>
+        <li>Dos botons: “<strong>Afegir alumne</strong>” i “<strong>Veure resum</strong>”.</li>
+        <li>Un <code>&lt;div id="resultat"&gt;</code> per mostrar missatges i llistes d’alumnes.</li>
+        <li>Validació de dades (nom no buit, nota entre 0–10).</li>
+        <li>Llista final ordenada d’alumnes per nota, amb la mitjana general.</li>
+      </ul>
+
+      <h3>🪜 Passos recomanats</h3>
+      <ol>
+        <li>
+          Dissenya el teu formulari a l’<code>index.html</code> amb els inputs necessaris i un petit espai per mostrar
+          resultats.
+          <div class="nota">💡 Recorda: pots assignar un <code>id</code> als inputs i botons per accedir-hi des del
+            JavaScript.</div>
+        </li>
+
+        <li>
+          Declara un array buit:
+          <pre><code>const alumnes = [];</code></pre>
+          Aquest array desarà els objectes amb la informació de cada alumne.
+        </li>
+
+        <li>
+          Utilitza <code>document.querySelector()</code> per accedir als elements HTML (inputs, botons, resultats).
+        </li>
+
+        <li>
+          Afegeix <strong>listeners d’esdeveniments</strong> amb <code>addEventListener('click', ...)</code>
+          per detectar quan l’usuari prem els botons.
+        </li>
+
+        <li>
+          Implementa la lògica de validació:
+          <ul>
+            <li>El nom no pot estar buit.</li>
+            <li>La nota ha de ser un número vàlid entre <code>0</code> i <code>10</code>.</li>
+            <li>Mostra un missatge d’error si alguna dada és incorrecta.</li>
+          </ul>
+          <div class="nota">💡 Pista: pots fer servir <code>isNaN()</code> per comprovar si la nota és numèrica.</div>
+        </li>
+
+        <li>
+          Desa cada alumne com un objecte <code>{ nom: "...", nota: 0 }</code> i afegeix-lo a l’array amb
+          <code>push()</code>.
+        </li>
+
+        <li>
+          Mostra missatges i resultats modificant el contingut del <code>div</code> amb
+          <code>textContent</code> o <code>innerHTML</code>.
+        </li>
+      </ol>
+
+      <h3>🧠 Ús de <code>isNaN()</code> al DOM</h3>
+      <p>
+        <code>isNaN()</code> continua sent fonamental per validar les dades dels inputs:
+      </p>
+      <pre><code>const nota = Number(document.querySelector("#nota").value);
+if (isNaN(nota) || nota < 0 || nota > 10) {
+  console.log("⚠️ La nota no és vàlida:", nota);
+}</code></pre>
+
+      <h3>📊 Exemple esperat de sortida amb <code>console.log()</code></h3>
+      <pre><code>Alumne afegit: { nom: "Clara", nota: 8 }
+Array actual: [ {nom: "Clara", nota: 8}, {nom: "Pau", nota: 6} ]
+Resum:
+Mitjana: 7.00
+Aprovats: 2
+Alumnes ordenats:
+1. Clara - 8
+2. Pau - 6</code></pre>
+
+      <h3>🧠 Conceptes que has d’aplicar (del Tema 2)</h3>
+      <ul>
+        <li>Variables i constants (<code>let</code>, <code>const</code>).</li>
+        <li>Condicionals <code>if</code> i operadors lògics.</li>
+        <li>Arrays i objectes simples.</li>
+        <li>Bucles <code>for</code>, <code>for...of</code> o mètodes com <code>forEach()</code>.</li>
+        <li>Manipulació del DOM amb <code>querySelector()</code>, <code>textContent</code>, <code>innerHTML</code>.</li>
+        <li>Ús de <code>console.log()</code> per comprovar i depurar el comportament del teu codi.</li>
+      </ul>
+
+      <h3>📘 Conceptes addicionals (opcionals, nivell avançat)</h3>
+      <ul>
+        <li>📘 Plantilles literals (textos amb <code>${ }</code>) per fer missatges més elegants.</li>
+        <li>📊 Ús de mètodes com <code>reduce()</code> o <code>sort()</code> per calcular mitjanes i ordenar dades.</li>
+        <li>💬 Interpolació HTML dins de <code>innerHTML</code> per crear llistes dinàmiques.</li>
+        <li>🎨 Millores visuals amb CSS o canvis de color segons la nota (verd si aprova, vermell si suspèn).</li>
+        <li>💾 Emmagatzematge temporal amb <code>localStorage</code> (opcional).</li>
+        <li>⚙️ Funcions auxiliars com <code>calculaMitjana()</code> o <code>mostraLlista()</code> per organitzar millor
+          el codi.</li>
+        <li>📁 Separació de codi amb més d’un fitxer JS si vols modularitzar el projecte.</li>
+      </ul>
+
+      <div class="nota">
+        💡 Aquests recursos addicionals no són obligatoris, però demostren un <strong>nivell més alt de comprensió i
+          autonomia</strong>.
+        Si els apliques correctament i amb coherència, pots aconseguir la <strong>qualificació màxima</strong>.
+      </div>
+
+      <h3>📁 Estructura mínima del projecte</h3>
+      <pre><code>fase3/
+├── index.html   → Formulari amb inputs i div per resultats
+├── style.css    → Estils bàsics i estructura del formulari
+└── main.js      → Manipulació del DOM i lògica d'interacció</code></pre>
+
+      <div class="nota">
+        🧩 Aquesta fase representa el <strong>nivell més alt d’autonomia i creativitat</strong> del tema.
+        Només cal JavaScript pur, però pots enriquir la teva solució si entens què fas.
+        Es valorarà molt positivament la <strong>claredat del codi, el bon ús del DOM</strong> i la capacitat de
+        presentar resultats
+        d’una forma estructurada i llegible.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="fase2">← Anterior</button>
+        <button class="btn next" data-next="recursos">Següent →</button>
+      </div>
+    </section>
+    <!-- 📚 RECURSOS -->
+    <section id="recursos">
+      <h2>📚 Recursos i documentació</h2>
+
+      <p>
+        En aquest apartat trobaràs tots els <strong>recursos oficials, validadores i eines útils</strong>
+        que pots fer servir durant l’examen del <strong>Tema 2: Sintaxi bàsica de JavaScript</strong>.
+        Són fonts de confiança i t’ajudaran a resoldre dubtes de sintaxi, comprovar errors i practicar.
+      </p>
+
+      <h3>🧠 Documentació oficial i guies de referència</h3>
+      <ul>
+        <li>📘 <a href="https://developer.mozilla.org/ca/docs/Web/JavaScript" target="_blank">
+            <strong>MDN Web Docs — JavaScript</strong></a>
+          La referència oficial més completa de JavaScript, amb exemples clars i explicacions de cada mètode, bucle,
+          condicional o operador.
+        </li>
+
+        <li>📗 <a href="https://developer.mozilla.org/ca/docs/Web/Guide/HTML/HTML5" target="_blank">
+            <strong>MDN — HTML5 Guide</strong></a>
+          Guia sobre l’estructura d’un document HTML5, elements semàntics i bones pràctiques.
+        </li>
+
+        <li>🎨 <a href="https://developer.mozilla.org/ca/docs/Web/CSS" target="_blank">
+            <strong>MDN — CSS Reference</strong></a>
+          Llista completa de propietats CSS i exemples de disseny i maquetació.
+        </li>
+
+        <li>📘 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">
+            <strong>MDN — Document Object Model (DOM)</strong></a>
+          Explicació del funcionament del DOM, com accedir als elements i com modificar-los des de JavaScript.
+        </li>
+
+        <li>📗 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN"
+            target="_blank">
+            <strong>MDN — Funció isNaN()</strong></a>
+          Guia sobre com comprovar si un valor no és numèric i exemples pràctics.
+        </li>
+
+        <li>📙 <a href="https://javascript.info/" target="_blank">
+            <strong>JavaScript.info — Guia avançada</strong></a>
+          Web didàctica molt recomanada per entendre pas a pas els fonaments i les estructures del llenguatge.
+        </li>
+      </ul>
+
+      <h3>🔍 Validació i comprovació de codi</h3>
+      <ul>
+        <li>✅ <a href="https://validator.w3.org/" target="_blank">
+            <strong>HTML Validator (W3C)</strong></a>
+          Comprova que el teu codi HTML sigui correcte i segueixi els estàndards internacionals.
+        </li>
+
+        <li>✅ <a href="https://jigsaw.w3.org/css-validator/" target="_blank">
+            <strong>CSS Validator (W3C)</strong></a>
+          Valida les fulles d’estil i detecta errors de sintaxi o propietats mal escrites.
+        </li>
+
+        <li>🧪 <a href="https://es6console.com/" target="_blank">
+            <strong>ES6 Console</strong></a>
+          Entorn lleuger per provar fragments de codi JavaScript (ideal per fer proves ràpides de funcions o bucles).
+        </li>
+
+        <li>🧠 <a href="https://codepen.io/" target="_blank">
+            <strong>CodePen</strong></a> — Entorn online per escriure, executar i provar codi HTML, CSS i JS.
+        </li>
+
+        <li>💻 <a href="https://jsfiddle.net/" target="_blank">
+            <strong>JSFiddle</strong></a> — Alternativa a CodePen per crear mini projectes i compartir-los fàcilment.
+        </li>
+
+        <li>🧩 <a href="https://jsonformatter.org/json-parser" target="_blank">
+            <strong>JSON Formatter</strong></a> — Verifica i formata estructures JSON, útil per revisar arrays
+          d’objectes.
+        </li>
+
+        <li>🧮 <a href="https://beautifier.io/" target="_blank">
+            <strong>JS / HTML / CSS Beautifier</strong></a> — Per netejar, alinear i fer més llegible el teu codi abans
+          d’entregar-lo.
+        </li>
+
+        <li>🧰 <a href="https://eslint.org/demo" target="_blank">
+            <strong>ESLint Online Demo</strong></a> — Analitza el teu codi JavaScript i detecta possibles errors de
+          sintaxi o bones pràctiques.
+        </li>
+      </ul>
+
+      <h3>📚 Recursos de pràctica i aprenentatge</h3>
+      <ul>
+        <li>🎯 <a href="https://www.w3schools.com/js/" target="_blank">
+            <strong>W3Schools — JavaScript Tutorial</strong></a>
+          Exemples interactius per practicar condicions, bucles, arrays i funcions bàsiques.
+        </li>
+
+        <li>📖 <a href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank">
+            <strong>FreeCodeCamp — JavaScript Algorithms</strong></a>
+          Curs complet gratuït amb exercicis de variables, bucles i manipulació de dades.
+        </li>
+
+        <li>💡 <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps" target="_blank">
+            <strong>MDN — JavaScript: First Steps</strong></a>
+          Guia per començar a programar en JavaScript des de zero, amb exemples senzills.
+        </li>
+
+        <li>🧩 <a href="https://www.programiz.com/javascript/online-compiler/" target="_blank">
+            <strong>Programiz Online JS Compiler</strong></a>
+          Executa el teu codi JavaScript sense necessitat d’instal·lar res.
+        </li>
+
+        <li>📊 <a href="https://regexr.com/" target="_blank">
+            <strong>RegExr</strong></a> — Prova expressions regulars per validar entrades de text (opcional, nivell
+          avançat).
+        </li>
+      </ul>
+
+      <h3>🧠 Consells per a l’examen</h3>
+      <ul>
+        <li>Utilitza <code>console.log()</code> per comprovar les variables i càlculs abans de mostrar resultats.</li>
+        <li>Valida els teus fitxers HTML i CSS amb els validadors del W3C abans d’entregar.</li>
+        <li>Fes servir la consola del navegador (<strong>F12 → Consola</strong>) per depurar errors.</li>
+        <li>Si tens dubtes de sintaxi, consulta sempre <strong>MDN</strong> o <strong>JavaScript.info</strong>, no fonts
+          desconegudes.</li>
+        <li>Recorda que el codi ha de ser teu i coherent amb el que s’ha vist a classe.</li>
+      </ul>
+
+      <div class="nota">
+        💡 Aquests recursos t’ajudaran a comprendre millor cada part del llenguatge i verificar el teu treball pas a
+        pas.
+        Utilitzar-los correctament demostra <strong>autonomia, criteri i responsabilitat professional</strong>.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="fase3">← Anterior</button>
+        <button class="btn next" data-next="checklist">Següent →</button>
+      </div>
+    </section>
+
+    <!-- ✅ CHECKLIST -->
+    <section id="checklist">
+      <h2>✅ Checklist abans d’entregar</h2>
+
+      <p>
+        Abans d’enviar el teu projecte, assegura’t que compleixes tots els requisits tècnics, d’organització i de bones
+        pràctiques.
+        Aquesta llista t’ajudarà a revisar que el teu codi és complet, net i funcional.
+      </p>
+
+      <h3>📋 Verificacions generals</h3>
+      <ul>
+        <li>El codi JavaScript comença amb <code>'use strict';</code> a tots els fitxers <code>main.js</code>.</li>
+        <li>No s’utilitzen <code>var</code> ni comparacions amb <code>==</code> — fes servir <code>let</code> /
+          <code>const</code> i <code>===</code>.
+        </li>
+        <li>Tots els fitxers <code>index.html</code>, <code>style.css</code> i <code>main.js</code> estan correctament
+          enllaçats.</li>
+        <li>El projecte s’obre i funciona correctament des d’un navegador modern (Chrome, Firefox o Edge).</li>
+        <li>Totes les <strong>fases (1, 2 i 3)</strong> estan completes i funcionen de manera independent.</li>
+      </ul>
+
+      <h3>🧠 Qualitat del codi</h3>
+      <ul>
+        <li>El codi és <strong>clar i llegible</strong>, amb noms de variables i funcions significatius.</li>
+        <li>Hi ha <strong>comentaris breus</strong> explicant les parts principals de la lògica.</li>
+        <li>No hi ha <strong>codi duplicat</strong> ni línies innecessàries.</li>
+        <li>El codi compleix les <strong>bones pràctiques</strong> del tema (indentació, espais, ordre lògic).</li>
+        <li>Els resultats i càlculs es mostren correctament a la consola (<code>console.log()</code>) o al DOM.</li>
+        <li>S’ha utilitzat correctament la <strong>validació amb <code>isNaN()</code></strong> per comprovar valors
+          numèrics.</li>
+        <li>Les condicions i bucles estan ben estructurats i sense errors lògics.</li>
+      </ul>
+
+      <h3>🧩 Fase 1 — Variables, operadors i condicions</h3>
+      <ul>
+        <li>S’utilitzen variables i constants (<code>let</code> / <code>const</code>) correctament.</li>
+        <li>Es validen totes les dades introduïdes amb <code>prompt()</code>.</li>
+        <li>El càlcul de la nota final segueix la fórmula: <code>teoria*0.4 + pràctica*0.5 + actitud*0.1</code>.</li>
+        <li>Els missatges es mostren amb <code>alert()</code> i es comproven amb <code>console.log()</code>.</li>
+      </ul>
+
+      <h3>🧩 Fase 2 — Arrays i funcions</h3>
+      <ul>
+        <li>El codi demana un nombre d’alumnes i desa correctament els objectes dins un array.</li>
+        <li>S’utilitzen bucles (<code>for</code>, <code>for...of</code>) per recórrer l’array.</li>
+        <li>Es calcula correctament la mitjana, el millor i pitjor alumne.</li>
+        <li>Els resultats es mostren a la consola amb <code>console.log()</code> de forma clara i ordenada.</li>
+      </ul>
+
+      <h3>🧩 Fase 3 — DOM i interacció visual</h3>
+      <ul>
+        <li>El formulari HTML conté camps per nom i nota, amb els <code>id</code> correctes.</li>
+        <li>Els botons activen funcions mitjançant <code>addEventListener()</code>.</li>
+        <li>Les dades s’afegeixen a un array d’objectes i es mostren al <code>div id="resultat"</code>.</li>
+        <li>Es valida que la nota sigui un número vàlid amb <code>isNaN()</code> i condicions numèriques.</li>
+        <li>El resultat final (llista d’alumnes i mitjana) es mostra correctament a la pàgina.</li>
+      </ul>
+
+      <h3>🔍 Validació i comprovacions finals</h3>
+      <ul>
+        <li>✅ HTML validat amb <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+        <li>✅ CSS validat amb <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validator</a>.</li>
+        <li>✅ JS comprovat sense errors a la consola (F12 → Consola).</li>
+        <li>✅ Codi revisat amb <a href="https://eslint.org/demo" target="_blank">ESLint</a> o <a
+            href="https://beautifier.io/" target="_blank">Beautifier.io</a>.</li>
+        <li>✅ Fitxer <code>notes.txt</code> inclòs amb una breu reflexió personal sobre el procés i dificultats.</li>
+      </ul>
+
+      <h3>📦 Estructura final del projecte</h3>
+      <pre><code>ExamenNF2B_2DAWB_CognomNom/
+├── fase1/
 │   ├── index.html
 │   ├── style.css
 │   └── main.js
@@ -106,173 +812,129 @@
 │   ├── index.html
 │   ├── style.css
 │   └── main.js
-└── notes.txt</code></pre>
-      <div class="nota">Cada fase amplia l’anterior amb noves funcionalitats i millora el codi.</div>
+├── fase3/
+│   ├── index.html
+│   ├── style.css
+│   └── main.js
+└── notes.txt
+</code></pre>
+
+      <div class="nota">
+        💡 Si compleixes tots aquests punts, el teu projecte serà complet, validat i demostrará un
+        <strong>domini sòlid dels continguts del Tema 2</strong>.
+        Aquesta llista és també la mateixa que s’utilitzarà per avaluar el teu treball.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="recursos">← Anterior</button>
+        <button class="btn next" data-next="entrega">Següent →</button>
+      </div>
     </section>
 
-    <!-- FASE 1 -->
-    <section>
-      <h2>🧩 Fase 1 — Variables i càlculs bàsics</h2>
-      <p><strong>Objectiu:</strong> treballar amb variables, constants, operadors i validacions bàsiques amb <code>prompt()</code> i <code>alert()</code>.</p>
+    <section id="entrega">
+      <h2>🏁 Entrega final</h2>
 
-      <h3>🪜 Passos a seguir:</h3>
-      <ul>
-        <li>Demanar <strong>nom, hores treballades i tarifa per hora</strong> amb <code>prompt()</code>.</li>
-        <li>Convertir valors amb <code>Number()</code> i comprovar si són vàlids.</li>
-        <li>Calcular el <strong>sou setmanal</strong> (<code>hores * tarifa</code>).</li>
-        <li>Mostrar els resultats amb <code>alert()</code> i <code>console.log()</code>.</li>
-        <li>Si supera les 40 hores, indicar que ha fet hores extres.</li>
-      </ul>
-
-      <h3>📄 Codi base</h3>
-      <pre><code>'use strict';
-
-const nom = prompt("Nom del treballador:");
-const hores = Number(prompt("Hores treballades:"));
-const tarifa = Number(prompt("Tarifa per hora (€):"));
-
-if (!nom || isNaN(hores) || isNaN(tarifa) || hores <= 0 || tarifa <= 0) {
-  alert("❌ Dades incorrectes! Torna-ho a provar.");
-  throw new Error("Dades no vàlides");
-}
-
-const sou = hores * tarifa;
-const missatge = hores > 40
-  ? `✅ ${nom} ha fet hores extres!\nSou total: ${sou.toFixed(2)} €`
-  : `ℹ️ ${nom} no ha fet hores extres.\nSou total: ${sou.toFixed(2)} €`;
-
-alert(missatge);
-console.log(missatge);</code></pre>
-    </section>
-
-    <!-- FASE 1.5 -->
-    <section>
-      <h2>🧩 Fase 1.5 — Diversos treballadors amb bucle i arrays</h2>
-      <p><strong>Objectiu:</strong> repetir la fase 1 per a diversos treballadors utilitzant bucles i arrays.</p>
-
-      <h3>🪜 Passos a seguir:</h3>
-      <ul>
-        <li>Demanar amb <code>prompt()</code> quants treballadors vols afegir.</li>
-        <li>Usar un <code>for</code> per repetir la lectura de dades.</li>
-        <li>Guardar cada treballador dins un array <code>treballadors</code> com a objecte <code>{ nom, hores, sou }</code>.</li>
-        <li>Mostrar el resum a la consola amb mitjanes i hores extres.</li>
-      </ul>
-
-      <h3>📄 Codi base</h3>
-      <pre><code>'use strict';
-
-const treballadors = [];
-const TARIFA_HORA = 15;
-
-const total = Number(prompt("Quants treballadors vols afegir?"));
-
-for (let i = 0; i < total; i++) {
-  const nom = prompt(`Nom del treballador ${i + 1}:`);
-  const hores = Number(prompt(`Hores treballades per ${nom}:`));
-
-  if (!nom || isNaN(hores) || hores < 0) {
-    alert(`❌ Dades incorrectes per ${nom || 'treballador desconegut'}`);
-    continue;
-  }
-
-  const sou = hores * TARIFA_HORA;
-  const horesExtres = hores > 40;
-  treballadors.push({ nom, hores, sou, horesExtres });
-}
-
-console.log("📋 Resum de treballadors:");
-for (const t of treballadors) {
-  console.log(`${t.nom}: ${t.hores}h → ${t.sou.toFixed(2)} € (${t.horesExtres ? 'Hores extres' : 'Normal'})`);
-}</code></pre>
-    </section>
-
-    <!-- FASE 2 -->
-    <section>
-      <h2>🧩 Fase 2 — Aplicació amb formulari HTML i DOM</h2>
-      <p><strong>Objectiu:</strong> capturar dades d’un formulari, validar-les i mostrar els resultats al DOM.</p>
-
-      <h3>🪜 Passos a seguir:</h3>
-      <ul>
-        <li>Dissenya un formulari amb <code>input</code> per nom i hores.</li>
-        <li>Crea botons per <strong>afegir</strong> i <strong>mostrar resum</strong>.</li>
-        <li>Utilitza <code>addEventListener</code> per controlar els clics.</li>
-        <li>Mostra errors i resultats dins del DOM amb <code>textContent</code>.</li>
-      </ul>
-
-      <h3>📄 Codi base</h3>
-      <pre><code>'use strict';
-const $ = (sel) => document.querySelector(sel);
-const treballadors = [];
-const TARIFA_HORA = 15;
-
-$('#btnAfegir').addEventListener('click', afegirTreballador);
-$('#btnResum').addEventListener('click', mostrarResum);
-
-function mostrarMissatge(text, esError = false) {
-  const box = $('#missatge');
-  box.textContent = text;
-  box.classList.toggle('error', esError);
-}
-
-function afegirTreballador() {
-  const nom = $('#nom').value.trim();
-  const hores = Number($('#hores').value);
-
-  if (!nom || isNaN(hores) || hores <= 0) {
-    mostrarMissatge("❌ Dades incorrectes.", true);
-    return;
-  }
-
-  const sou = hores * TARIFA_HORA;
-  const horesExtres = hores > 40;
-  treballadors.push({ nom, hores, sou, horesExtres });
-
-  mostrarMissatge(`✅ ${nom} afegit correctament.`);
-  $('#nom').value = '';
-  $('#hores').value = '';
-}
-
-function mostrarResum() {
-  if (treballadors.length === 0) {
-    mostrarMissatge("❌ Encara no hi ha treballadors.", true);
-    return;
-  }
-
-  let totalSou = 0;
-  let sortida = "📊 Resum de torns:\n\n";
-  for (const t of treballadors) {
-    sortida += `${t.nom}: ${t.hores}h → ${t.sou.toFixed(2)} € ${t.horesExtres ? '(🏆 Hores extres)' : ''}\n`;
-    totalSou += t.sou;
-  }
-
-  const mitjanaSou = totalSou / treballadors.length;
-  sortida += `\n💰 Sou mitjà: ${mitjanaSou.toFixed(2)} €`;
-
-  $('#sortida').textContent = sortida;
-}</code></pre>
-    </section>
-
-    <!-- CHECKLIST -->
-    <section>
-      <h2>✅ Checklist abans d’entregar</h2>
-      <ul>
-        <li>El codi comença amb <code>'use strict';</code></li>
-        <li>No hi ha <code>var</code> ni <code>==</code>.</li>
-        <li>Les validacions funcionen correctament.</li>
-        <li>Hi ha comentaris al codi.</li>
-        <li>El fitxer <code>notes.txt</code> està complet amb reflexió.</li>
-        <li>HTML i CSS validats amb <a href="https://validator.w3.org/" target="_blank">W3C</a> i <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validator</a>.</li>
-      </ul>
-      <p class="nota">
-        💡 Nom del fitxer final: <strong>ExamenNF2_2DAWA_CognomNom.zip</strong>
+      <p>
+        Un cop completades totes les fases, has de preparar la teva entrega final seguint les indicacions següents.
+        Recorda que la presentació, estructura i validació del projecte també formen part de l’avaluació.
       </p>
-    </section>
 
+      <h3>📦 Contingut obligatori a entregar</h3>
+      <p>
+        El teu lliurament ha d’incloure tots els fitxers de les tres fases i un document de reflexió personal.
+      </p>
+
+      <pre><code>ExamenNF2B_2DAWB_CognomNom.zip
+├── fase1/
+│   ├── index.html
+│   ├── style.css
+│   └── main.js
+├── fase2/
+│   ├── index.html
+│   ├── style.css
+│   └── main.js
+├── fase3/
+│   ├── index.html
+│   ├── style.css
+│   └── main.js
+└── notes.txt  ← reflexió personal (mínim 10 línies)
+</code></pre>
+
+      <ul>
+        <li>📁 Cada carpeta (<code>fase1</code>, <code>fase2</code>, <code>fase3</code>) ha de contenir els tres fitxers
+          principals: <code>index.html</code>, <code>style.css</code> i <code>main.js</code>.</li>
+        <li>📄 El fitxer <strong><code>notes.txt</code></strong> ha d’incloure una breu reflexió personal amb:
+          <ul>
+            <li>Les dificultats trobades.</li>
+            <li>Les parts que més has après o millorat.</li>
+            <li>Com has validat i provat el teu codi.</li>
+            <li>(Opcional) Millores o idees per a futures versions.</li>
+          </ul>
+        </li>
+        <li>🧹 Revisa que no hi hagi fitxers temporals, còpies automàtiques o carpetes innecessàries (p. ex.
+          <code>.DS_Store</code> o <code>__MACOSX</code>).</li>
+      </ul>
+
+      <h3>📤 Format i nom del fitxer a lliurar</h3>
+      <p>
+        El fitxer final ha de tenir exactament aquest nom:
+      </p>
+      <pre><code>ExamenNF2B_2DAWB_CognomNom.zip</code></pre>
+      <p>
+        Exemple:
+        <code>ExamenNF2B_2DAWB_GarciaMartina.zip</code>
+      </p>
+
+      <div class="nota">
+        ⚠️ No canvïis el nom del fitxer ni lliuris carpetes sense comprimir.
+        Es penalitzarà si el fitxer no segueix aquesta nomenclatura o manca alguna fase.
+      </div>
+
+      <h3>🌐 Lliurament a Moodle</h3>
+      <p>
+        L’examen s’ha d’entregar exclusivament a través del Moodle del centre:
+      </p>
+      <p>
+        🔗 <a href="https://moodle.elpuig.xeill.net/mod/assign/view.php?id=113780" target="_blank">
+          <strong>📤 Enllaç oficial d'entrega — Examen NF2B · Tema 2 (Moodle Institut Puig Castellar)</strong>
+        </a>
+      </p>
+      <ul>
+        <li>Assegura’t que el fitxer pujat és el correcte abans de confirmar l’enviament.</li>
+        <li>Després d’entregar, comprova que el Moodle mostra el teu lliurament com a “enviat correctament”.</li>
+        <li>Només es permet <strong>una entrega per alumne</strong> (consulta amb el professor si necessites
+          reobrir-la).</li>
+      </ul>
+
+      <h3>🧠 Abans d’enviar...</h3>
+      <ul>
+        <li>Verifica tots els punts del <strong>Checklist</strong> anterior.</li>
+        <li>Comprova que cada fase s’executa correctament des del navegador (sense errors a la consola).</li>
+        <li>Valida HTML i CSS amb els <strong>validadors del W3C</strong>.</li>
+        <li>Revisa que les funcions <code>isNaN()</code>, <code>console.log()</code> i <code>addEventListener()</code>
+          estiguin ben aplicades.</li>
+        <li>Guarda còpia local del teu treball abans de pujar-lo.</li>
+      </ul>
+
+      <div class="nota">
+        💡 El lliurament al Moodle és l’únic que es tindrà en compte per a l’avaluació.
+        Revisa amb atenció cada detall: estructura, comentaris, validació i nom del fitxer.
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn prev" data-prev="checklist">← Anterior</button>
+        <button class="btn disabled">🏁 Fi de l’examen</button>
+      </div>
+    </section>
   </main>
 
+  <!-- 🧠 FOOTER -->
   <footer>
-    Institut Puig Castellar · 2n DAW A · Mòdul 0612 — Desenvolupament Web en Entorn Client
+    Institut Puig Castellar · 2n DAW B · Mòdul 0612 — Desenvolupament Web en Entorn Client © 2025
   </footer>
 
+  <button id="backTop" title="Tornar amunt">⬆</button>
+  <script src="main.js"></script>
 </body>
+
 </html>
