@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧩 Fase 3 — Formulari i DOM</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧩 Fase 3 — Formulari i manipulació del DOM</title>
+
+  <!-- 🔗 Full d’estils -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🧩 Fase 3 — Formulari HTML i manipulació del DOM</h1>
-  <p>
-    Aquesta fase et permet combinar el codi JavaScript amb la interfície visual HTML.
-    Hauràs d’afegir alumnes i mostrar els resultats dins la pàgina.
-  </p>
+  <main>
+    <h1>🧩 Fase 3 — Aplicació de gestió de notes</h1>
 
-  <form id="formulari">
-    <label for="nom">Nom de l’alumne:</label>
-    <input type="text" id="nom" placeholder="Escriu el nom">
-    <label for="nota">Nota:</label>
-    <input type="number" id="nota" min="0" max="10" step="0.1">
-    <div class="botons">
-      <button type="button" id="btnAfegir">Afegir alumne</button>
-      <button type="button" id="btnResum">Veure resum</button>
-    </div>
-  </form>
+    <p>
+      Aquesta fase posa en pràctica tot el que has après sobre variables, condicions, bucles i arrays,
+      i t’introdueix de manera guiada al <strong>DOM</strong> (Document Object Model).
+      No cal que toquis cap part del codi HTML: ja està preparat perquè funcioni automàticament.
+    </p>
 
-  <div id="resultat">Els resultats apareixeran aquí...</div>
+    <!-- 🧾 FORMULARI D'ENTRADA DE DADES -->
+    <section class="formulari">
+      <h2>📋 Introdueix les dades de l'alumne</h2>
+      <form id="formulariNotes">
+        <label for="nom">Nom de l'alumne:</label>
+        <input type="text" id="nom" placeholder="Ex: Anna" required />
 
+        <label for="nota">Nota (0–10):</label>
+        <input type="number" id="nota" min="0" max="10" placeholder="Ex: 8" required />
+
+        <div class="botons">
+          <button type="button" id="btnAfegir">Afegir alumne</button>
+          <button type="button" id="btnResum">Veure resum</button>
+          <button type="reset" id="btnReset">Netejar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 🧮 RESULTATS -->
+    <section class="resultats">
+      <h2>📊 Resultats del grup</h2>
+      <div id="resultat">
+        <p>Encara no hi ha dades introduïdes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Mòdul 0612 · Desenvolupament web en entorn client · Institut Puig Castellar
+  </footer>
+
+  <!-- 🔧 Codi JavaScript -->
   <script src="main.js"></script>
 </body>
 </html>

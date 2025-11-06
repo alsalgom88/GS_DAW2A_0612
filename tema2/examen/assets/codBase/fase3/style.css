@@ -1,61 +1,88 @@
-/* ======================================================
-   🧩 Fase 3 — Estils del formulari i secció de resultats
-   ====================================================== */
+/* =========================================================
+   🎨 Fase 3 — Formulari i DOM preconfigurat
+   ---------------------------------------------------------
+   Estils senzills però clars, amb focus en la llegibilitat
+   ========================================================= */
+
 body {
-  font-family: 'Inter', sans-serif;
-  background: #f9fafb;
-  padding: 40px;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f8fafc;
   color: #1e293b;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
 }
 
 h1 {
   color: #1e3a8a;
+  text-align: center;
   margin-bottom: 20px;
 }
 
+h2 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
 form {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 label {
-  display: block;
-  margin-top: 10px;
   font-weight: 600;
 }
 
 input {
-  width: 100%;
   padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
   border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1em;
 }
 
 .botons {
-  margin-top: 15px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 button {
-  background: #2563eb;
+  background-color: #2563eb;
   color: white;
   border: none;
-  padding: 10px 18px;
-  margin-right: 10px;
+  padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
 }
 
 button:hover {
-  background: #1e3a8a;
+  background-color: #1e3a8a;
 }
 
 #resultat {
-  margin-top: 25px;
-  padding: 15px;
-  background: #e2e8f0;
+  background: #f1f5f9;
   border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+  min-height: 80px;
+}
+
+footer {
+  text-align: center;
+  background: #1e3a8a;
+  color: white;
+  padding: 12px;
+  margin-top: 40px;
+  font-size: 0.9em;
 }
