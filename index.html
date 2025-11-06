@@ -15,17 +15,53 @@
 
   <!-- Capçalera -->
   <header class="hero">
-    <div class="hero-content">
-      <img src="assets/logo.png" alt="Institut Puig Castellar" class="logo">
-      <div class="hero-text">
-        <h1>Institut Puig Castellar</h1>
-        <h2>Cicle Formatiu de Grau Superior · Desenvolupament d’Aplicacions Web</h2>
-        <h3>Mòdul professional 0612 · Desenvolupament web en entorn client</h3>
-      </div>
-    </div>
+    <img src="assets/logo.png" alt="Logo Institut Puig Castellar" class="logo">
+    <h1>Institut Puig Castellar</h1>
+    <p>Cicle Formatiu de Grau Superior · Desenvolupament d'Aplicacions Web</p>
+    <h2>Mòdul professional 0612 · Desenvolupament web en entorn client</h2>
   </header>
 
   <main class="container">
+    <!-- 🏫 Blocs institucionals en dues columnes -->
+    <section class="bloc-institucional">
+      <!-- Columna esquerra -->
+      <div class="columna esquerra">
+        <div class="recursos-institut">
+          <h2>🌐 Recursos del Puig Castellar</h2>
+          <ul>
+            <li><a href="https://elpuig.xeill.net/" target="_blank" rel="noopener noreferrer">🏫 Web de l’Institut Puig
+                Castellar</a></li>
+            <li><a href="https://moodle.elpuig.xeill.net/" target="_blank" rel="noopener noreferrer">📚 Moodle del Puig
+                Castellar</a></li>
+            <li><a href="https://elmeuescriptori.gestioeducativa.gencat.cat/login" target="_blank"
+                rel="noopener noreferrer">💻 ISARD VDI · Escriptori virtual</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1Lv7d1pF1j3eiemVKfmuqFZgJyq76pxXs" target="_blank"
+                rel="noopener noreferrer">🧩 Programacions de DAW</a></li>
+            <li><a href="https://drive.google.com/drive/folders/1pIIa2y9gvi8kL4UUAj7GI8jrfFoGNuHt" target="_blank"
+                rel="noopener noreferrer">🖥️ Programacions de DAM</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Columna dreta -->
+      <div class="columna dreta">
+        <div class="documents-institucionals">
+          <h2>📘 Documents institucionals</h2>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1YlqfkMGxAdFWcWpaPSJXrVtEdGIFebvi/edit" target="_blank"
+                rel="noopener noreferrer">🏫 Projecte educatiu del centre (PEC)</a></li>
+            <li><a href="https://docs.google.com/document/d/1LjJ00marTwirtq6oyT5vImKzyK1DTcBJ/edit" target="_blank"
+                rel="noopener noreferrer">📖 Projecte curricular de FP</a></li>
+            <li><a href="https://docs.google.com/document/d/1yUerszYQRxhxk7NjuTQBU8RmYtW6oUQ3OdgXE1PFLjY/edit?tab=t.0"
+                target="_blank" rel="noopener noreferrer">🤝 Pla de convivència</a></li>
+            <li><a href="https://docs.google.com/document/d/18Hg_FOKe96RM3-_t-ZthHHTAHoYZCb37/edit" target="_blank"
+                rel="noopener noreferrer">⚖️ NOFC · Normes de funcionament</a></li>
+            <li><a href="https://docs.google.com/document/d/1ELlMvPSYzqjqaA8JsbA0FeYCee5NBgowuKbJsck6M54/edit?tab=t.0"
+                target="_blank" rel="noopener noreferrer">📝 Carta de compromís educatiu</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section class="fade-in">
       <h2>🌍 Benvinguts al mòdul</h2>
       <p>
@@ -79,13 +115,15 @@
 
         <a href="tema1/index.html" class="card">
           <h3>🧭 Tema 1 — RA1</h3>
-          <p><strong>Selecció d’arquitectures i tecnologies client.</strong><br>Model client/servidor, navegadors, HTML,
+          <p><strong>Selecció d’arquitectures i tecnologies client.</strong><br>Model client/servidor, navegadors,
+            HTML,
             CSS, JS, eines i frameworks.</p>
         </a>
 
         <a href="tema2/index.html" class="card">
           <h3>🧩 Tema 2 — RA2</h3>
-          <p><strong>Sintaxi bàsica de JavaScript.</strong><br>Variables, constants, operadors, condicions i bucles.</p>
+          <p><strong>Sintaxi bàsica de JavaScript.</strong><br>Variables, constants, operadors, condicions i bucles.
+          </p>
         </a>
 
         <a href="tema3/index.html" class="card">
@@ -96,7 +134,8 @@
 
         <a href="tema4/index.html" class="card">
           <h3>⚙️ Tema 4 — RA4</h3>
-          <p><strong>Programació amb estructures definides per l’usuari.</strong><br>Funcions, arrays, objectes, classes
+          <p><strong>Programació amb estructures definides per l’usuari.</strong><br>Funcions, arrays, objectes,
+            classes
             i patrons bàsics.</p>
         </a>
 
@@ -108,20 +147,25 @@
 
         <a href="tema6/index.html" class="card">
           <h3>🧬 Tema 6 — RA6</h3>
-          <p><strong>Utilització del Model d’Objectes del Document (DOM).</strong><br>Manipulació, creació i eliminació
+          <p><strong>Utilització del Model d’Objectes del Document (DOM).</strong><br>Manipulació, creació i
+            eliminació
             d’elements HTML.</p>
         </a>
 
         <a href="tema7/index.html" class="card">
           <h3>🚀 Tema 7 — RA7</h3>
-          <p><strong>Aplicacions dinàmiques amb comunicació asíncrona.</strong><br>Fetch API, JSON, promeses i connexió
+          <p><strong>Aplicacions dinàmiques amb comunicació asíncrona.</strong><br>Fetch API, JSON, promeses i
+            connexió
             amb APIs REST.</p>
         </a>
       </div>
     </section>
+
   </main>
-  <button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button> <!-- Footer verd Matrix -->
+
   <footer>
+    <button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+    <!-- Footer verd Matrix -->
     <p>© 2025 Institut Puig Castellar · GS DAW · Mòdul 0612 — Desenvolupament Web en Entorn Client</p>
     <p class="friki">💾 “No hi ha error 404 si saps on buscar.” 🧠</p>
   </footer>
