@@ -1,90 +1,83 @@
 /* =========================================================
    💾 Mòdul 0612 — Desenvolupament Web en Entorn Client
-   Estil Matrix verd-neó · Institut Puig Castellar
+   Estil visual: Matrix verd-neó · Institut Puig Castellar
    ---------------------------------------------------------
-   ▫ Header fix amb animació i llum verd-neó
-   ▫ Logo amb efecte “pulse”
-   ▫ Seccions amb fade-in suau
+   ▫ Header fix i translúcid amb efecte llum verd
+   ▫ Logo animat amb efecte “pulse glow”
+   ▫ Seccions amb animacions de fade-in
+   ▫ Disseny responsive, accessible i docent
    ========================================================= */
 
+
+/* ────────────────────────────── */
+/* 🎨 PALETA DE COLORS (variables CSS globals) */
+/* ────────────────────────────── */
 :root {
-  --verd-matrix: #00ff99;
-  --verd-fosc: #0f172a;
-  --verd-clar: #a7f3d0;
-  --verd-neon: #10b981;
-  --text: #e2e8f0;
+  --verd-matrix: #00ff99;   /* Verd neó principal per elements destacats */
+  --verd-neon: #10b981;     /* Verd suau d’accent per botons i títols */
+  --verd-fosc: #0f172a;     /* Fons principal (quasi negre Matrix) */
+  --verd-clar: #a7f3d0;     /* Textos secundaris o informatius */
+  --text: #e2e8f0;          /* Color base del text clar sobre fons fosc */
 }
 
 /* ────────────────────────────── */
-/* BASE */
+/* 🧩 BASE GLOBAL DEL DOCUMENT */
 /* ────────────────────────────── */
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif; /* Tipografia moderna i llegible */
   margin: 0;
   color: var(--text);
-  background: var(--verd-fosc);
-  overflow-x: hidden;
-  padding-top: 170px; /* compensa el header fix */
+  background: var(--verd-fosc); /* Fons Matrix fosc */
+  overflow-x: hidden;           /* Evita scroll horitzontal en pantalles petites */
+  padding-top: 170px;           /* Espai per compensar el header fix */
 }
 
-/* Fons Matrix */
+/* ────────────────────────────── */
+/* 🌌 FONS ANIMAT “MATRIX” AMB CANVAS */
+/* ────────────────────────────── */
 #matrix-bg {
-  position: fixed;
+  position: fixed; /* Fons sempre fix darrere de tot */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: var(--verd-fosc);
-  opacity: 0.15;
-  z-index: -1;
+  opacity: 0.15;   /* Fons translúcid per no saturar */
+  z-index: -1;     /* Manté el canvas darrere del contingut */
 }
 
 /* ────────────────────────────── */
-/* HEADER MATRIX ANIMAT */
+/* 🔝 HEADER FIX + EFECTE MATRIX */
 /* ────────────────────────────── */
-/* 🔝 CAPÇALERA FIXA MATRIX (sense línies sobrants) */
 .hero {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed;           /* Manté el header sempre visible */
+  top: 0; left: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  /* ❌ treiem la línia inferior visible */
-  border-bottom: none;
+  z-index: 1000;             /* Per sobre de tot el contingut */
+  background: rgba(15, 23, 42, 0.85); /* Semiopac per veure el fons */
+  backdrop-filter: blur(8px);         /* Efecte “glassmorphism” */
   text-align: center;
-  padding: 10px 10px 8px 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.15);
-  animation: fadeInHeader 1.2s ease forwards;
+  padding: 10px;
+  border-bottom: none;       /* Treu línia sòlida inferior */
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.15); /* Llum verda suau */
+  animation: fadeInHeader 1.2s ease forwards;   /* Entrada amb suavitat */
 }
 
-/* 💡 Efecte llum verd subtil (no línia sòlida) */
+/* Efecte lluminós verd subtil sota el header */
 .hero::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: radial-gradient(ellipse at center, rgba(0,255,153,0.5) 0%, rgba(0,255,153,0) 80%);
+  bottom: 0; left: 0;
+  width: 100%; height: 5px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,255,153,0.5) 0%, rgba(0,255,153,0) 80%);
   filter: blur(10px);
   opacity: 0.6;
   pointer-events: none;
 }
 
-/* Ens assegurem que el h2 no tingui cap línia */
-.hero h2 {
-  color: var(--verd-clar);
-  font-size: 0.95em;
-  font-weight: 500;
-  margin: 3px 0 0 0;
-  padding-top: 0;
-  border-top: none;
-  border-bottom: none;
-}
-
-/* 🔸 Logo animat “Pulse” */
+/* 🔹 Logo amb animació de respiració (“pulse”) */
 .logo {
   height: 50px;
   width: auto;
@@ -94,11 +87,7 @@ body {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { filter: drop-shadow(0 0 0px var(--verd-matrix)); transform: scale(1); }
-  50% { filter: drop-shadow(0 0 10px var(--verd-matrix)); transform: scale(1.05); }
-}
-
+/* Títol principal del centre */
 .hero h1 {
   color: var(--verd-matrix);
   font-size: 1.5em;
@@ -107,31 +96,38 @@ body {
   text-shadow: 0 0 8px rgba(0, 255, 153, 0.5);
 }
 
+/* Subtítols i text del header */
 .hero p, .hero h2 {
   color: var(--verd-clar);
   font-size: 0.95em;
   margin: 3px 0;
-  border-top: none;
 }
 
-/* Aparició suau */
+/* ✨ Animacions del header */
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 var(--verd-matrix)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 10px var(--verd-matrix)); transform: scale(1.05); }
+}
+
 @keyframes fadeInHeader {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
 /* ────────────────────────────── */
-/* CONTINGUT GENERAL */
+/* 📦 CONTENIDOR GENERAL DEL COS */
 /* ────────────────────────────── */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px 120px;
+  max-width: 1100px;          /* Amplada màxima centrada */
+  margin: 0 auto;             /* Centrat horitzontalment */
+  padding: 40px 20px 120px;   /* Espai extra per al footer fix */
 }
 
-/* Seccions amb fade-in animat */
+/* ────────────────────────────── */
+/* 🧭 SECCIONS GENERALS */
+/* ────────────────────────────── */
 section {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05); /* Llum suau sobre fons fosc */
   border-radius: 12px;
   padding: 25px;
   margin-bottom: 25px;
@@ -141,123 +137,36 @@ section {
   transition: transform 1.2s ease, opacity 1.2s ease;
 }
 
+/* Afegit per JavaScript quan la secció és visible */
 section.visible {
   transform: translateY(0);
   opacity: 1;
 }
 
+/* Títols de secció uniformes */
 h2 {
   color: var(--verd-neon);
   border-bottom: 2px solid var(--verd-neon);
   padding-bottom: 6px;
 }
 
-/* Notes i detalls */
-.nota {
-  background: rgba(16, 185, 129, 0.15);
-  border-left: 6px solid var(--verd-neon);
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.friki {
-  color: var(--verd-neon);
-  font-family: 'Courier New', monospace;
-  font-weight: bold;
-  margin-top: 12px;
-}
-
-/* Targetes */
-.temes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.card {
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  border-radius: 10px;
-  padding: 20px;
-  text-decoration: none;
-  color: var(--text);
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: rgba(16, 185, 129, 0.25);
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
-}
-
-/* Botó Tornar Amunt */
-.back-top {
-  position: fixed;
-  bottom: 70px;
-  right: 25px;
-  background: rgba(16, 185, 129, 0.25);
-  color: var(--verd-neon);
-  border: 2px solid var(--verd-neon);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  font-size: 22px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 9999;
-  box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-}
-.back-top:hover {
-  background: rgba(16, 185, 129, 0.6);
-  color: #0f172a;
-  box-shadow: 0 0 20px rgba(0, 255, 153, 0.7);
-  transform: translateY(-3px);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.75);
-  color: var(--verd-clar);
-  font-size: 0.85em;
-  border-top: 2px solid var(--verd-neon);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px 5px;
-  backdrop-filter: blur(6px);
-}
-
-/* Responsive */
-@media (max-width: 750px) {
-  .logo { height: 45px; }
-  .hero h1 { font-size: 1.2em; }
-  .hero p, .hero h2 { font-size: 0.85em; }
-  body { padding-top: 150px; }
-}
-
-/* 🌐 Disposició en dues columnes sota el header */
+/* ────────────────────────────── */
+/* 🏫 BLOCS INSTITUCIONALS (dues columnes) */
+/* ────────────────────────────── */
 .bloc-institucional {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Deixa espai entre els dos blocs */
   align-items: flex-start;
   gap: 40px;
-  margin: 160px auto 40px; /* 🔽 separació del header */
+  margin: 160px auto 40px;
   max-width: 1100px;
   padding: 0 40px;
 }
 
-/* Columnes */
-.columna {
-  flex: 1;
-}
+/* Cada columna ocupa la mateixa amplada */
+.columna { flex: 1; }
 
+/* Aparença de les dues caixes (Recursos i Documents) */
 .recursos-institut,
 .documents-institucionals {
   background: rgba(0, 255, 153, 0.05);
@@ -267,16 +176,16 @@ footer {
   box-shadow: 0 0 12px rgba(0,255,153,0.1);
   backdrop-filter: blur(6px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
 }
 
+/* Efecte de “flotar” al passar el ratolí */
 .recursos-institut:hover,
 .documents-institucionals:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(0,255,153,0.3);
 }
 
-/* Títols */
+/* Títols dins dels blocs */
 .recursos-institut h2,
 .documents-institucionals h2 {
   color: var(--verd-neon);
@@ -287,17 +196,12 @@ footer {
   padding-bottom: 4px;
 }
 
-/* Llistes */
+/* Llistes i enllaços sense punts ni decoracions */
 .recursos-institut ul,
 .documents-institucionals ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.recursos-institut li,
-.documents-institucionals li {
-  margin: 6px 0;
 }
 
 .recursos-institut a,
@@ -309,22 +213,253 @@ footer {
   transition: color 0.3s, text-shadow 0.3s;
 }
 
+/* Efecte neó a l’enllaç en hover */
 .recursos-institut a:hover,
 .documents-institucionals a:hover {
   color: var(--verd-neon);
   text-shadow: 0 0 6px var(--verd-neon);
 }
 
-/* 📱 Responsive */
+/* Versió mòbil: blocs un sobre l’altre */
 @media (max-width: 900px) {
   .bloc-institucional {
     flex-direction: column;
     align-items: center;
     margin-top: 140px;
   }
-  .recursos-institut,
-  .documents-institucionals {
-    width: 100%;
-    max-width: 600px;
+}
+
+/* ────────────────────────────── */
+/* 🌍 SECCIÓ DE BENVINGUDA */
+/* ────────────────────────────── */
+.benvinguda {
+  background: rgba(0, 255, 153, 0.03);
+  border: 1px solid rgba(0, 255, 153, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.08);
+  padding: 30px;
+  margin: 60px auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+/* Llistes personalitzades amb fletxes Matrix */
+.benvinguda ul { list-style: none; padding-left: 0; margin: 15px 0; }
+.benvinguda li {
+  margin: 8px 0; padding-left: 1.4em; position: relative;
+}
+.benvinguda li::before {
+  content: "▹"; position: absolute; left: 0; color: var(--verd-neon);
+}
+
+/* Bloc destacat tipus cita (“Consell Jedi”) */
+.consell-jedi {
+  background: rgba(16,185,129,0.12);
+  border-left: 4px solid var(--verd-neon);
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--verd-clar);
+  box-shadow: 0 0 8px rgba(0,255,153,0.15);
+}
+.firma-jedi {
+  display: block;
+  font-size: 0.9em;
+  color: var(--verd-neon);
+  margin-top: 6px;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+}
+
+/* ────────────────────────────── */
+/* 🧠 DESCRIPCIÓ GENERAL DEL MÒDUL */
+/* ────────────────────────────── */
+.descripcio-modul {
+  background: rgba(0, 255, 153, 0.03);
+  border: 1px solid rgba(0, 255, 153, 0.2);
+  border-radius: 14px;
+  padding: 35px;
+  margin: 60px auto;
+  max-width: 950px;
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.1);
+  line-height: 1.6; /* Millora la lectura */
+}
+
+/* Títols interns */
+.descripcio-modul h2, .descripcio-modul h3 {
+  color: var(--verd-neon);
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 255, 153, 0.3);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* Llistes pedagògiques amb fletxes verdes */
+.descripcio-modul ul { list-style: none; margin: 15px 0; padding-left: 0; }
+.descripcio-modul li {
+  margin: 8px 0; padding-left: 1.4em; position: relative;
+}
+.descripcio-modul li::before {
+  content: "▹"; position: absolute; left: 0; color: var(--verd-neon); font-weight: bold;
+}
+
+/* Bloc de consell del mentor */
+.consell-mentor {
+  background: rgba(0, 255, 153, 0.07);
+  border-left: 4px solid var(--verd-neon);
+  padding: 15px 25px;
+  margin: 25px 0;
+  border-radius: 8px;
+  font-style: italic;
+  color: var(--verd-clar);
+  box-shadow: 0 0 8px rgba(0, 255, 153, 0.15);
+}
+
+/* Text de tancament resum */
+.tancament { margin-top: 25px; font-weight: 500; color: var(--verd-clar); }
+
+/* ────────────────────────────── */
+/* 📚 TARGETES DE TEMES */
+/* ────────────────────────────── */
+.temes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* Targeta individual de tema */
+.card {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  border-radius: 10px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecte visual al passar el ratolí */
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.3);
+}
+
+/* ────────────────────────────── */
+/* ⬆️ BOTÓ “TORNAR AMUNT” */
+/* ────────────────────────────── */
+.back-top {
+  position: fixed;
+  bottom: 70px;
+  right: 25px;
+  background: rgba(16, 185, 129, 0.25);
+  color: var(--verd-neon);
+  border: 2px solid var(--verd-neon);
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none; /* desactivat fins que JS el mostri */
+  transition: all 0.3s ease;
+}
+
+/* Efecte hover: més brillant i puja lleugerament */
+.back-top:hover {
+  background: rgba(16, 185, 129, 0.6);
+  color: #0f172a;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.7);
+  transform: translateY(-3px);
+}
+
+/* ────────────────────────────── */
+/* 🧠 FOOTER FIX MATRIX */
+/* ────────────────────────────── */
+footer {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--verd-clar);
+  font-size: 0.85em;
+  border-top: 2px solid var(--verd-neon);
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  padding: 8px 5px;
+  backdrop-filter: blur(6px);
+}
+
+/* Frase divertida del peu */
+.friki {
+  color: var(--verd-neon);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* ────────────────────────────── */
+/* 📱 AJUSTOS RESPONSIVE GENERALS */
+/* ────────────────────────────── */
+@media (max-width: 750px) {
+  .logo { height: 45px; }
+  .hero h1 { font-size: 1.2em; }
+  .hero p, .hero h2 { font-size: 0.85em; }
+  body { padding-top: 150px; }
+  .descripcio-modul, .benvinguda { margin: 40px 20px; padding: 25px; }
+}
+
+/* ────────────────────────────── */
+/* 📘 BOTÓ ÍNDEX COMPLET (HEADER AJUSTAT I FLOTANT) */
+/* ────────────────────────────── */
+.btn-index {
+  position: absolute;
+  top: 50%;               /* Centrat verticalment al header */
+  right: 10%;             /* Espaiat cap a dins, sense enganxar al marge */
+  transform: translateY(-50%);
+  background: rgba(0, 255, 153, 0.12);
+  border: 1px solid var(--verd-neon);
+  color: var(--verd-neon);
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.15);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: fadeInButton 1s ease 1.5s forwards; /* Apareix després del header */
+  transition: all 0.3s ease;
+}
+
+/* Hover: efecte neó brillant i lleuger moviment */
+.btn-index:hover {
+  background: var(--verd-neon);
+  color: #0f172a;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.6);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Animació d’aparició suau */
+@keyframes fadeInButton {
+  from { opacity: 0; transform: translateY(-60%); }
+  to { opacity: 1; transform: translateY(-50%); }
+}
+
+/* Versió mòbil: el botó baixa sota el logo */
+@media (max-width: 800px) {
+  .btn-index {
+    position: static;
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.85em;
+    padding: 6px 14px;
+    transform: none;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 255, 153, 0.2);
   }
 }

@@ -1,63 +1,75 @@
 /* =========================================================
-   💾 Mòdul 0612 — Desenvolupament Web en Entorn Client
-   Estil Matrix verd-neó · Institut Puig Castellar
+   💾 MP0612 — Desenvolupament Web en Entorn Client
+   Full d’estils: Índex complet del mòdul (contenido.html)
+   Estil visual: Matrix verd-neó · Institut Puig Castellar
    ---------------------------------------------------------
-   ▫ Header fix, centrat i translúcid
-   ▫ Sense línia verda visible
-   ▫ Logo amb efecte pulse glow
-   ▫ Seccions amb fade-in
+   ▫ Header fix amb logo i text centrat
+   ▫ Navegació responsive amb enllaços de tema
+   ▫ Botó “Tornar a l’inici” flotant dins del header
+   ▫ Seccions amb animació fade-in
+   ▫ Disseny clar, accessible i pedagògic
    ========================================================= */
 
+/* ────────────────────────────── */
+/* 🎨 PALETA DE COLORS (variables globals) */
+/* ────────────────────────────── */
 :root {
-  --verd-neon: #00ff9d;
-  --verd-clar: #a8ffdf;
-  --fons-fosc: #0a0f0d;
-  --text-clar: #e2e8f0;
+  --verd-neon: #00ff9d;    /* Color principal Matrix (neó verd intens) */
+  --verd-clar: #a8ffdf;    /* Verd suau per textos secundaris */
+  --fons-fosc: #0a0f0d;    /* Fons general fosc per contrast alt */
+  --text-clar: #e2e8f0;    /* Color base dels textos */
 }
 
-/* 🌌 Fons Matrix */
+/* ────────────────────────────── */
+/* 🌌 FONS MATRIX (canvas fix) */
+/* ────────────────────────────── */
 #matrix-bg {
-  position: fixed;
+  position: fixed; /* El fons roman fix mentre es fa scroll */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--fons-fosc);
-  z-index: -1;
-  filter: brightness(0.5) saturate(0.8);
+  background: var(--fons-fosc); /* Color fosc base */
+  z-index: -1; /* Darrere de tot el contingut */
+  filter: brightness(0.5) saturate(0.8); /* Redueix brillantor i saturació per no distreure */
 }
 
-/* 🌐 Cos general */
+/* ────────────────────────────── */
+/* 🧩 COS GLOBAL DEL DOCUMENT */
+/* ────────────────────────────── */
 body {
-  margin: 0;
-  font-family: 'Fira Code', monospace, system-ui;
-  color: var(--text-clar);
-  line-height: 1.6;
-  overflow-x: hidden;
-  padding-top: 160px; /* 🔽 evita solapament amb el header */
+  margin: 0; /* Elimina marges per defecte del navegador */
+  font-family: 'Fira Code', monospace, system-ui; /* Tipografia tècnica llegible */
+  color: var(--text-clar); /* Color del text per defecte */
+  line-height: 1.6; /* Millora la llegibilitat */
+  overflow-x: hidden; /* Evita scroll horitzontal indesitjat */
+  background: var(--fons-fosc); /* Aplica el fons fosc */
+  padding-top: 170px; /* Espai per compensar el header fix */
 }
 
-/* 🔝 Header Matrix */
-header {
-  position: fixed;
+/* ────────────────────────────── */
+/* 🔝 HEADER FIX I TRANSLÚCID */
+/* ────────────────────────────── */
+header.hero {
+  position: fixed; /* Sempre visible a la part superior */
   top: 0;
   left: 0;
-  width: 100%;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  border-bottom: none; /* ❌ sense línia verda */
-  padding: 10px 0;
+  width: 100%; /* Ocupa tot l’ample de la finestra */
+  background: rgba(15, 23, 42, 0.85); /* Fons translúcid verd-blavós */
+  backdrop-filter: blur(8px); /* Efecte de vidre difuminat */
+  border-bottom: none; /* Elimina línies dures */
+  padding: 12px 0 10px; /* Espai interior per contingut i menú */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Disposa logo i textos en columna */
   align-items: center;
   text-align: center;
-  z-index: 1000;
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.15);
-  animation: fadeInHeader 1s ease forwards;
+  z-index: 1000; /* Per sobre del contingut */
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.15); /* Ombra verda suau */
+  animation: fadeInHeader 1s ease forwards; /* Entrada suau */
 }
 
-/* ✨ Llum difusa Matrix sota el header */
-header::after {
+/* ✨ Llum verda difosa sota el header */
+header.hero::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -65,135 +77,153 @@ header::after {
   width: 100%;
   height: 6px;
   background: radial-gradient(circle, rgba(0,255,153,0.5) 0%, rgba(0,255,153,0) 80%);
-  filter: blur(10px);
+  filter: blur(10px); /* Difuminat suau de la llum */
   opacity: 0.6;
-  pointer-events: none;
+  pointer-events: none; /* No interfereix amb clics */
 }
 
-/* 🌀 Logo amb efecte Pulse Glow */
+/* 🔹 Logo amb efecte “pulse glow” (batega com llum verda) */
 header .logo {
-  height: 50px;
-  margin-bottom: 6px;
-  animation: pulseGlow 3s ease-in-out infinite;
+  height: 50px; /* Mida del logo */
+  margin-bottom: 6px; /* Espai inferior */
+  animation: pulseGlow 3s ease-in-out infinite; /* Animació infinita */
 }
 
-@keyframes pulseGlow {
-  0%, 100% { filter: drop-shadow(0 0 0px var(--verd-neon)); transform: scale(1); }
-  50% { filter: drop-shadow(0 0 10px var(--verd-neon)); transform: scale(1.05); }
-}
-
-/* Textos del header */
+/* ✴️ Textos del header (títol, subtítol i cicle) */
 header h1 {
   color: var(--verd-neon);
   font-size: 1.3em;
   margin: 2px 0;
-  text-shadow: 0 0 8px rgba(0,255,153,0.4);
+  text-shadow: 0 0 8px rgba(0,255,153,0.4); /* Efecte de brillantor verd */
 }
-
 header h2, header p {
   color: var(--verd-clar);
   font-size: 0.9em;
   margin: 0;
-  border: none; /* 🔒 elimina qualsevol línia residual */
 }
 
-/* Animació d’entrada */
+/* 🎞️ Animacions del header i logo */
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 0 var(--verd-neon)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 10px var(--verd-neon)); transform: scale(1.05); }
+}
 @keyframes fadeInHeader {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* 🧭 Navegació */
-nav {
-  margin-top: 180px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  position: relative;
-  z-index: 500;
+/* ────────────────────────────── */
+/* 🧭 NAVEGACIÓ INTERNA (DINS DEL HEADER) */
+/* ────────────────────────────── */
+.menu-temes {
+  display: flex; /* Distribueix els botons en línia */
+  flex-wrap: wrap; /* Passa a dues línies si cal */
+  justify-content: center; /* Centra horitzontalment */
+  gap: 10px; /* Espai entre botons */
+  margin-top: 12px; /* Espai superior respecte títols */
 }
 
-nav a {
-  color: var(--verd-neon);
-  border: 1px solid var(--verd-neon);
-  padding: 8px 14px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.3);
+.menu-temes a {
+  color: var(--verd-neon); /* Text verd neó */
+  border: 1px solid var(--verd-neon); /* Contorn verd */
+  padding: 7px 12px; /* Espai intern */
+  border-radius: 8px; /* Cantonades arrodonides */
+  text-decoration: none; /* Sense subratllat */
+  font-weight: 600; /* Lleugerament en negreta */
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.3); /* Fons translúcid negre */
   backdrop-filter: blur(3px);
+  transition: all 0.3s ease; /* Transició suau d’efectes */
 }
 
-nav a:hover {
+/* Efecte “hover” (quan el ratolí passa pel botó) */
+.menu-temes a:hover {
+  background: var(--verd-neon);
+  color: #0f172a; /* Text fosc per contrast */
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ────────────────────────────── */
+/* 🔙 BOTÓ “TORNAR A L’INICI” FLOTANT */
+/* ────────────────────────────── */
+.btn-home {
+  position: absolute;
+  top: 50%; /* Centrat verticalment amb el títol */
+  right: 8%; /* Lleugerament endins del costat dret */
+  transform: translateY(-50%); /* Ajusta l’alineació vertical */
+  background: rgba(0, 255, 153, 0.12); /* Fons translúcid verd */
+  border: 1px solid var(--verd-neon);
+  color: var(--verd-neon);
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.15);
+  backdrop-filter: blur(4px);
+  opacity: 0; /* Inici invisible */
+  animation: fadeInButton 1s ease 1.5s forwards; /* Apareix amb retard suau */
+}
+
+/* Efecte visual al passar el ratolí */
+.btn-home:hover {
   background: var(--verd-neon);
   color: #0f172a;
-  box-shadow: 0 0 15px rgba(0, 255, 153, 0.7);
-  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.6);
+  transform: translateY(-50%) scale(1.05); /* Lleu zoom i mantenir centrat */
 }
 
-/* 🔙 Botó “Tornar a l’inici” */
-.back-home {
-  display: block;
-  margin: 25px auto 0;
-  background: rgba(16, 185, 129, 0.25);
-  color: var(--verd-neon);
-  border: 2px solid var(--verd-neon);
-  border-radius: 8px;
-  padding: 8px 18px;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
-  backdrop-filter: blur(4px);
-  transition: all 0.3s ease;
+/* ✨ Animació d’aparició del botó flotant */
+@keyframes fadeInButton {
+  from { opacity: 0; transform: translateY(-60%); }
+  to { opacity: 1; transform: translateY(-50%); }
 }
 
-.back-home:hover {
-  background: rgba(16, 185, 129, 0.6);
-  color: #0f172a;
-  box-shadow: 0 0 20px rgba(0, 255, 153, 0.7);
-  transform: translateY(-2px);
-}
-
-/* 📘 Seccions amb fade-in */
+/* ────────────────────────────── */
+/* 📘 SECCIONS DE CONTINGUT */
+/* ────────────────────────────── */
 section {
   margin: 60px auto;
   padding: 25px;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03); /* Lleu fons translúcid */
   border: 1px solid rgba(0, 255, 153, 0.2);
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 255, 153, 0.08);
-  transform: translateY(30px);
+  transform: translateY(30px); /* Per animació inicial */
   opacity: 0;
   transition: transform 1.2s ease, opacity 1.2s ease;
 }
 
+/* Classe “visible” afegida per JS quan la secció entra en pantalla */
 section.visible {
   transform: translateY(0);
   opacity: 1;
 }
 
+/* Títols de secció */
 section h2 {
   color: var(--verd-neon);
   border-bottom: 1px solid rgba(0, 255, 153, 0.4);
   padding-bottom: 6px;
 }
 
-/* Enllaços de subtemes */
+/* Enllaços dels subtemes dins les seccions */
 .subtema {
   color: var(--verd-clar);
   font-weight: bold;
   text-decoration: none;
 }
-
 .subtema:hover {
   color: var(--verd-neon);
   text-shadow: 0 0 8px var(--verd-neon);
 }
 
-/* ⬆️ Botó “Tornar amunt” */
+/* ────────────────────────────── */
+/* ⬆️ BOTÓ “TORNAR AMUNT” */
+/* ────────────────────────────── */
 .back-top {
   position: fixed;
   bottom: 70px;
@@ -210,10 +240,11 @@ section h2 {
   z-index: 9999;
   box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
   backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0; /* Ocult per defecte */
+  pointer-events: none; /* JS l’activarà quan calgui */
 }
 
+/* Efecte quan es passa el ratolí */
 .back-top:hover {
   background: rgba(16, 185, 129, 0.6);
   color: #0f172a;
@@ -221,10 +252,13 @@ section h2 {
   transform: translateY(-3px);
 }
 
-/* 🧠 Peu de pàgina */
+/* ────────────────────────────── */
+/* 🧠 PEU DE PÀGINA FIX */
+/* ────────────────────────────── */
 footer {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   background: rgba(15, 23, 42, 0.8);
   color: var(--verd-clar);
@@ -235,14 +269,41 @@ footer {
   backdrop-filter: blur(5px);
 }
 
-/* 📱 Responsive */
-@media (max-width: 750px) {
+/* ────────────────────────────── */
+/* 📱 DISSENY RESPONSIVE */
+/* ────────────────────────────── */
+@media (max-width: 800px) {
+  /* Logo i textos més petits */
   header .logo { height: 45px; }
   header h1 { font-size: 1.1em; }
   header h2, header p { font-size: 0.85em; }
-  nav { margin-top: 130px; }
-  nav a { font-size: 0.85em; padding: 5px 10px; }
-  .back-home { font-size: 12px; }
+
+  /* Menú i botó reubicats */
+  .menu-temes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+    gap: 6px;
+  }
+  .menu-temes a {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+
+  /* Botó “Tornar a l’inici” es col·loca sota el títol */
+  .btn-home {
+    position: static;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85em;
+    padding: 6px 12px;
+    transform: none;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 255, 153, 0.25);
+  }
+
+  /* Ajust de seccions i botó amunt */
   section { margin: 40px 10px; padding: 18px; }
   .back-top { bottom: 80px; right: 15px; width: 38px; height: 38px; font-size: 20px; }
 }
