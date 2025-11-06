@@ -3,53 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fase 3 — Formulari i manipulació del DOM (Examen Tema 2)" />
   <title>🧩 Fase 3 — Formulari i manipulació del DOM</title>
 
-  <!-- 🔗 Full d’estils -->
+  <!-- Enllaç a l'arxiu CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <img src="../img/logo.png" alt="Logo Institut Puig Castellar" class="logo" />
+      <div class="header-text">
+        <h1>Institut Puig Castellar</h1>
+        <p>Cicle Formatiu de Grau Superior · Desenvolupament d'Aplicacions Web</p>
+        <p class="modul">Mòdul professional 0612 · Desenvolupament web en entorn client</p>
+      </div>
+    </div>
+  </header>
+
   <main>
-    <h1>🧩 Fase 3 — Aplicació de gestió de notes</h1>
+    <!-- Títol principal -->
+    <h2>🧩 Fase 3 — Formulari i manipulació del DOM</h2>
 
-    <p>
-      Aquesta fase posa en pràctica tot el que has après sobre variables, condicions, bucles i arrays,
-      i t’introdueix de manera guiada al <strong>DOM</strong> (Document Object Model).
-      No cal que toquis cap part del codi HTML: ja està preparat perquè funcioni automàticament.
-    </p>
+    <!-- Introducció de l’examen -->
+    <section class="intro">
+      <p>
+        En aquesta fase hauràs de demostrar que saps utilitzar 
+        <strong>JavaScript</strong> per manipular el DOM i interactuar amb l’usuari.
+        El formulari ja està creat — només cal que completis la lògica dins del fitxer
+        <code>main.js</code>.
+      </p>
+      <p>
+        Has de poder:
+        <ul>
+          <li>Introduir alumnes amb el seu nom i nota.</li>
+          <li>Validar les dades i mostrar missatges al navegador.</li>
+          <li>Veure un resum del grup amb la mitjana i la llista d’alumnes.</li>
+          <li>Netejar totes les dades amb un botó.</li>
+        </ul>
+      </p>
+    </section>
 
-    <!-- 🧾 FORMULARI D'ENTRADA DE DADES -->
+    <!-- Formulari d'entrada -->
     <section class="formulari">
-      <h2>📋 Introdueix les dades de l'alumne</h2>
-      <form id="formulariNotes">
+      <form id="formAlumnes" onsubmit="return false;">
         <label for="nom">Nom de l'alumne:</label>
-        <input type="text" id="nom" placeholder="Ex: Anna" required />
+        <input type="text" id="nom" placeholder="Escriu el nom" />
 
         <label for="nota">Nota (0–10):</label>
-        <input type="number" id="nota" min="0" max="10" placeholder="Ex: 8" required />
+        <input type="number" id="nota" placeholder="Ex: 7.5" />
 
+        <!-- Botons d’acció -->
         <div class="botons">
           <button type="button" id="btnAfegir">Afegir alumne</button>
           <button type="button" id="btnResum">Veure resum</button>
-          <button type="reset" id="btnReset">Netejar</button>
+          <button type="button" id="btnReset">Netejar</button>
         </div>
       </form>
     </section>
 
-    <!-- 🧮 RESULTATS -->
+    <!-- Zona de resultats -->
     <section class="resultats">
-      <h2>📊 Resultats del grup</h2>
-      <div id="resultat">
-        <p>Encara no hi ha dades introduïdes.</p>
+      <h3>📋 Resultats:</h3>
+      <div id="resultat" class="resultat">
+        Encara no hi ha dades introduïdes.
       </div>
     </section>
   </main>
 
   <footer>
-    Mòdul 0612 · Desenvolupament web en entorn client · Institut Puig Castellar
+    <p>
+      Examen Tema 2 — Desenvolupament web en entorn client · 
+      <a href="https://alsalgom88.github.io/GS_DAW2A_0612/index.html">Tornar a l’inici</a>
+    </p>
   </footer>
 
-  <!-- 🔧 Codi JavaScript -->
+  <!-- Enllaç al JS -->
   <script src="main.js"></script>
 </body>
 </html>
